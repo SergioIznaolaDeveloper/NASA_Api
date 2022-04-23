@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const app = express(); // Inicializa el servidor. App es un bjeto que representa el server
 const port = process.env.PORT || 3000; // Puerto donde se va a correr el servidor
+const host = '0.0.0.0'; // Host donde se va a correr el servidor
 
 require("./utils/MongoDb");
 const landings = require("./controllers/controllers_landings");
@@ -28,6 +29,6 @@ app.post("/api/astronomy/landings/create", landings.createNewLanding);
 app.put("/api/astronomy/landings/edit/:id", landings.editLanding);
 app.post("/api/astronomy/landings/delete/:id", landings.deleteLanding);
 
-app.listen(port, () => {
+app.listen(port, host, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
