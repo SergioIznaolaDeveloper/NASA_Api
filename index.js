@@ -11,7 +11,7 @@ const cors = require("cors");
 router.use(cors());
 router.use(express.urlencoded({ extended: true })); //Estas dos son para los métodos put y post, para que el servidor pueda leer la información nueva que le mandamos
 router.use(express.json());
-router.get("/", (req, res) => {});
+router.get("/", (req, res) => {console.log("Funciona")});
 router.get("/api/astronomy/neas", neas.getNeas);
 router.post("/api/astronomy/neas/create", neas.createNewNea);
 router.put("/api/astronomy/neas/edit/:designation", neas.editNeas);
