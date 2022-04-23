@@ -2,7 +2,7 @@ require("dotenv").config(); //archivo para proteger contraseñas
 const express = require("express");
 const path = require("path");
 const router = express(); // Inicializa el servidor. App es un bjeto que representa el server
-const port = process.env.PORT; // Puerto donde se va a correr el servidor
+const port = process.env.PORT || 3000; // Puerto donde se va a correr el servidor
 
 require("./utils/MongoDb");
 const landings = require("./controllers/controllers_landings");
