@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const url = 'mongodb+srv://patryFuentes:Esamisma2022@cluster0.jm2bo.mongodb.net/nasa_api?retryWrites=true&w=majority';
+const url = process.env.URL_MONGO;
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
