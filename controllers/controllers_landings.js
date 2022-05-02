@@ -12,11 +12,9 @@ const getLandingsMass = async (req, res) => {
     if (req.params.mass) {
       console.log(req.params.mass);
       data = await Landing.find({ mass: { $gte: req.params.mass } }, "-_id");
-      console.log(data);
       res.status(200).json(data);
     } else {
       data = await Landing.find({});
-      console.log(data);
       res.status(200).json(data);
     }
   } catch (error) {
