@@ -16,7 +16,7 @@ class List extends Component {
 
   // Retrieves the list of items from the Express app
   getList = () => {
-    fetch('/api/astronomy/landings/mass/')
+    fetch('/api/astronomy/neas/')
     .then(res => res.json())
     .then(list => this.setState({ list }))
   }
@@ -26,15 +26,24 @@ class List extends Component {
 
     return (
       <div className="App">
-        <h1>List of Items</h1>
+        <h1>List of Neas</h1>
         {/* Check to see if any items are found*/}
         {list.length ? (
           <div>
             {/* Render the list of items */}
-            {list.map((item) => {
+            {list.map((item, i) => {
               return(
-                <div>
-                  {item.name}
+                <div key={i}>
+                  <p >Designation: {item.designation}</p>
+                  <p>Discovery date: {item.discovery_date}</p>
+                  <p>h_mag: {item.h_mag}</p>
+                  <p>Moid_Au: {item.moid_au}</p>
+                  <p>q_au_1: {item.q_au_1}</p>
+                  <p>q_au_2: {item.q_au_2}</p>
+                  <p>period year: {item.period_yr}</p>
+                  <p>i_deg: {item.i_deg}</p>
+                  <p>pha: {item.pha}</p>
+                  <p>Orbit class: {item.orbit_class}</p>
                 </div>
               );
             })}
