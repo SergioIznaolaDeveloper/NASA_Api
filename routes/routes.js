@@ -1,0 +1,23 @@
+const express = require("express");
+const router = express.Router();
+const landings = require("../controllers/controllers_landings");
+const neas = require("../controllers/controllers_neas");
+
+router.get("/api/astronomy/neas", neas.getNeas);
+router.get("/api/astronomy/neas/class/:class?", neas.getNeas);
+router.post("/api/astronomy/neas/create", neas.createNewNea);
+router.put("/api/astronomy/neas/edit/:designation", neas.editNeas);
+router.post("/api/astronomy/neas/delete/:designation", neas.deleteNeas);
+
+
+router.get("/api/astronomy/landings", landings.getLandingsQuery);
+router.get("/api/astronomy/landings/mass/:mass?", landings.getLandingsMass);
+router.get(
+  "/api/astronomy/landings/class/:recclass?",
+  landings.getLandingClass
+);
+router.post("/api/astronomy/landings/create", landings.createNewLanding);
+router.put("/api/astronomy/landings/edit/:id", landings.editLanding);
+router.post("/api/astronomy/landings/delete/:id", landings.deleteLanding);
+
+module.exports = router;
