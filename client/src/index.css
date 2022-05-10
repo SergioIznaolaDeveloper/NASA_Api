@@ -18,9 +18,10 @@ body {
   background-color: #e8e8e8;
 }
 .header{
+  z-index: 1;
   width: 100%;
   top : 0;
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -98,4 +99,14 @@ body {
   justify-content: center;
   align-items: center;
 }
-#map { height: 180px; }
+#map { 
+  height: 500px; 
+  width: 1000px; 
+  background-color: #000f1f;
+  border-radius: 5px;
+  background-image: url('./assets/galaxy.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
