@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom';
-import Home from './Home';
-import Neas from './Neas';
-import Landings from './Landings';
+import Home from './Home/Home';
+import Neas from './Neas/Neas';
+import Landings from './Landings/Landings';
 
 export default function Main() {
   return (

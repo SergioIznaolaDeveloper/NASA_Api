@@ -4,7 +4,7 @@ const { db } = require("../utils/MongoDb");
 const getNeas = async (req, res) => {
   let data;
   try {
-    if (req.query.class) {
+ if (req.query.class) {
       console.log(req.query.class);
       data = await Nea.find(
         { orbit_class: req.query.class },
@@ -29,6 +29,9 @@ const getNeas = async (req, res) => {
         "orbit_class designation discovery_date -_id"
       );
       res.status(200).json(data);
+    } else {
+      data = await Nea.find({}, '-_id')
+          res.status(200).json(data)
     }
   } catch (error) {
     res.status(400).json({ error: error });
@@ -65,4 +68,4 @@ const deleteNeas = async (req, res) => {
       res.status(400).json({ message: err });
     }
   };
-module.exports = { getNeas, createNewNea, editNeas, deleteNeas };
+module.exports = { getNeas, createNewNea, editNeas, deleteNeas};

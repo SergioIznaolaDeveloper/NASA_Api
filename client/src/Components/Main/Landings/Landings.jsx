@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 class List extends Component {
   // Initialize the state
   constructor(props) {
@@ -14,6 +13,7 @@ class List extends Component {
     this.getList();
   }
 
+
   // Retrieves the list of items from the Express app
   getList = () => {
     fetch("/api/astronomy/landings/mass/")
@@ -23,10 +23,10 @@ class List extends Component {
 
   render() {
     const { list } = this.state;
-
     return (
-      <div className="App">
+      <div className="landings">
         <h1>List of Landings</h1>
+        <div id="map"></div>
         {/* Check to see if any items are found*/}
         {list.length ? (
           <div>

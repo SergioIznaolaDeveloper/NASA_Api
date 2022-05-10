@@ -16,7 +16,7 @@ class List extends Component {
 
   // Retrieves the list of items from the Express app
   getList = () => {
-    fetch('/api/astronomy/neas/')
+    fetch('/api/astronomy/neas')
     .then(res => res.json())
     .then(list => this.setState({ list }))
   }
@@ -25,8 +25,8 @@ class List extends Component {
     const { list } = this.state;
 
     return (
-      <div className="App">
-        <h1>List of Neas</h1>
+      <div className="neas">
+        <h1>All of Neas</h1>
         {/* Check to see if any items are found*/}
         {list.length ? (
           <div>

@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: true })); //Estas dos son para los métod
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.get("/", (req, res) => {console.log("Funciona")});
 app.get("/api/astronomy/neas", neas.getNeas);
+app.get("/api/astronomy/neas/class/:class?", neas.getNeas);
 app.post("/api/astronomy/neas/create", neas.createNewNea);
 app.put("/api/astronomy/neas/edit/:designation", neas.editNeas);
 app.post("/api/astronomy/neas/delete/:designation", neas.deleteNeas);
