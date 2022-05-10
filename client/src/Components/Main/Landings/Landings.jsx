@@ -84,7 +84,7 @@ class List extends Component {
         <MapContainer id="map" center={[0, 0]} zoom={3} scrollWheelZoom={false}>
         {list.map((item, i) => {
           {if(item.reclat && item.reclong !== undefined){
-              if(item.recclass === "H6") {
+              if(item.recclass === "H6" || item.recclass === "H5") {
                 return (
               <Marker icon={this.getIconH6()} key={i} position={[item.reclat, item.reclong]}><Popup>
               <p>Name: {item.name}</p>
