@@ -27,6 +27,7 @@ class List extends Component {
     return (
       <div className="neas">
         <h1>All of Neas</h1>
+
         {/* Check to see if any items are found*/}
         {list.length ? (
           <div>
