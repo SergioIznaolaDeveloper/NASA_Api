@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
 import { PicContext } from "./Context/PicContext";
+import { NavigatorContext } from './Context/NavigatorContext';
 import Main from "./Components/Main/Main";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import axios from "axios";
 
 
+
 export default function App() {
-  
   const [pic, setPic] = useState([]);
+  const [navActive, setNavActive] = useState("home");
 
   const getPic = async () => {
     if (pic.length === 0) {
@@ -21,13 +23,20 @@ export default function App() {
   pic,
   getPic,
   };
+  const nav = {
+    navActive, 
+    setNavActive
+  };
+
   getPic()
   return (
     <div className="App">
+      <NavigatorContext.Provider value={nav}>
       <Header />
       <PicContext.Provider value={infoPicture}>
       <Main />
       </PicContext.Provider>
+      </NavigatorContext.Provider>
       <Footer />
     </div>
   )

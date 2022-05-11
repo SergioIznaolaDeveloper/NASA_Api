@@ -63,7 +63,7 @@ const getIconSun = () => {
   });
 }
   return (
-    <MapContainer id="map" center={[0, 0]} zoom={3} scrollWheelZoom={false}>
+    <MapContainer id="map" center={[getSunEuler()[0], 0]} zoom={3} scrollWheelZoom={false}>
     {props.data.map((item, i) => {
       {if(item.reclat && item.reclong !== undefined){
           if(item.recclass === "H6" || item.recclass === "H5" || item.recclass === "H3-5") {

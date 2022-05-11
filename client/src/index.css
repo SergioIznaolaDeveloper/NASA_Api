@@ -17,9 +17,7 @@ body {
   font-family: 'Strait', sans-serif;
   background-color: #e8e8e8;
 }
-h1{
-  color: #000f1f;
-}
+
 .header{
   z-index: 1;
   width: 100%;
@@ -60,7 +58,18 @@ h1{
   background-color: #e8122b;
   color: #e8e8e8;
 }
-
+.nav__button-active{
+  font-family: 'Strait', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 5px;
+  border-radius: 5px;
+  border: transparent;
+  width: 20vh;
+  height: 30px;
+  background-color: #e8122b;
+  color: #e8e8e8;
+}
 .home{
   display: flex;
   flex-direction: column;
@@ -108,7 +117,7 @@ h1{
 }
 
 .landings{
-  margin-top: 50px;
+  margin: 80px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -246,3 +255,21 @@ width: 200px;
   width: 100px;
   height: 100px;
 }
+
+.delete{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin:50px 0px; 
+  color: #e8122b;
+}
+
+.delete__img{
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  background-image: url('./assets/delete.gif');
+}
+

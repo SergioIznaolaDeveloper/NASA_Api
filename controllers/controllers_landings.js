@@ -90,9 +90,9 @@ const editLanding = async (req, res) => {
 const deleteLanding = async (req, res) => {
   try {
     await Landing.deleteOne({ id: req.params.id })
-    res.status(200).send('Landing Borrado');
+    res.redirect('/delete');
   } catch (err) {
-    res.status(400).json({ message: err });
+    res.redirect('/nodelete');
   }
 };
 module.exports = {

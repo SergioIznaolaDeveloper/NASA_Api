@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react'
 import { PicContext } from "../../../Context/PicContext";
+import { NavigatorContext } from "../../../Context/NavigatorContext";
 
 export default function Home() {
-  const { pic } = React.useContext(PicContext);
-
+  const { pic } = useContext(PicContext);
+  const {setNavActive} = useContext(NavigatorContext);
+  useEffect(() => {
+    setNavActive("home");
+  } , [])
 console.log(pic.pic);
   return (
     <div className="home">

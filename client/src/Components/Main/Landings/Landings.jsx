@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Landing from './Landing'
 import Leaflet from '../../../hooks/leaflet'
+import { NavigatorContext } from "../../../Context/NavigatorContext";
 
-
-export default function Landings2() {
+export default function Landings() {
   const [list, setList] = useState([])
-  
-  useEffect(() => {getList()} , [list])
-  
+  const {setNavActive} = useContext(NavigatorContext);
+
+  useEffect(() => {
+    setNavActive("landings");
+    getList()
+  } , [])
+
   const getList = () => {
     fetch("/api/astronomy/landings/mass/")
       .then((res) => res.json())
@@ -15,9 +19,8 @@ export default function Landings2() {
   };
 return (
   <div className="landings">
-  <h1>Landings map</h1>
   <Leaflet data={list}/>
-  <h1>List of Landings</h1>
+  <h1>Filter landings</h1>
   <Landing data={list} />
 </div>
 )

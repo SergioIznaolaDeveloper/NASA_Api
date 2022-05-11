@@ -1,6 +1,8 @@
 import React from 'react'
 
+
 export default function Landing(props) {
+
   return ( 
     <div>{/* Check to see if any items are found*/}
     {props.data.length ? (
@@ -10,7 +12,7 @@ export default function Landing(props) {
           return (
             <div className="landing__container" key={i}>
               <div className="id-img">
-                <p className='landing__id'>#{i}</p>
+                <p className='landing__id'>#{i+1}</p>
                 {item.recclass === "H6" || item.recclass === "H5" || item.recclass === "H3-5" ? 
                 <div className="landing__imgH"></div> 
                 : item.recclass === "L6"  || item.recclass === "L5" || item.recclass === "LL5" || item.recclass === "LL6" || item.recclass === "LL4" || item.recclass === "L4" 
@@ -50,7 +52,9 @@ export default function Landing(props) {
                 <p className="landing__info-t">Longitude: </p>
                 <p className="landing__info">{item.reclong}</p>
               </div>
+              <form action={`/api/astronomy/landings/delete/${item.id}`}method='POST'>
                 <button className='landing__button'>DELETE LANDING</button>
+                </form>
               </div>
             </div>
           );
