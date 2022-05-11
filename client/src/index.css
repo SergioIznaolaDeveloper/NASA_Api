@@ -23,11 +23,25 @@ body {
   top : 0;
   position: absolute;
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   min-height: 50px;
   background-color: #085199;
+}
+.header__logo{
+  position: absolute;
+  left: 10px;
+  width: 80px;
+  height: 40px;
+  background-image: url('./Static/Logos/nasa2.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.header__nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .nav__button{
   font-family: 'Strait', sans-serif;
@@ -99,6 +113,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 #map { 
   height: 500px; 
   width: 1000px; 
@@ -109,4 +124,64 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+.landings__container{
+  width: 95vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.landing__container{
+ background-color: #085199;
+ color: white;
+ display: flex;
+ flex-flow: row wrap;
+ margin: 10px;
+}
+
+.landing__container-info{
+  display: flex;
+  flex-flow: column;
+}
+.landing__info{
+  margin: 0px;
+}
+
+.landing__imgH{
+  background-image: url('./Static/Icons/H6.png');
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+}
+.landing__imgL{
+  background-image: url('./Static/Icons/L6.png');
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.landing__imgD{
+  background-image: url('./Static/Icons/diogenite.png');
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+}
+.landing__imgVar{
+  background-image: url('./Static/Icons/undefined.png');
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.landing__img{
+  background-image: url('./Static/Icons/asteroide.png');
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
 }

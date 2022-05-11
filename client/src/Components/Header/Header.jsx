@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 export default function Header() {
   return (
     <header className="header">
-      {/* Link to List.js */}
+      <div className="header__logo"/>
+      <div className="header__nav">
       <Link to={'./'}>
         <button className="nav__button">
             Home
@@ -20,6 +21,7 @@ export default function Header() {
             Neas
         </button>
       </Link>
+      </div>
     </header>
     );
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { MapContainer } from 'react-leaflet/MapContainer'
 import { Marker } from 'react-leaflet/Marker'
 import { Popup } from 'react-leaflet/Popup'
+
 class List extends Component {
   // Initialize the state
   constructor(props) {
@@ -36,19 +37,20 @@ class List extends Component {
 }
 
 
+
   getIcon(_iconSize) {
     return L.icon({
       iconUrl: require("../../../Static/Icons/asteroide.png"),
       iconSize: [20],
     });
   }
-  getIconH6(){
+  getIconH(){
     return L.icon({
       iconUrl: require("../../../Static/Icons/H6.png"),
       iconSize: [20],
     });
   }
-  getIconL6(){
+  getIconL(){
     return L.icon({
       iconUrl: require("../../../Static/Icons/L6.png"),
       iconSize: [20],
@@ -57,6 +59,12 @@ class List extends Component {
   getIconDio(){
     return L.icon({
       iconUrl: require("../../../Static/Icons/diogenite.png"),
+      iconSize: [20],
+    });
+  }
+  getIconVar(){
+    return L.icon({
+      iconUrl: require("../../../Static/Icons/undefined.png"),
       iconSize: [20],
     });
   }
@@ -80,13 +88,13 @@ class List extends Component {
     const { list } = this.state;
     return (
       <div className="landings">
-        <h1>List of Landings</h1>
+        <h1>Landings map</h1>
         <MapContainer id="map" center={[0, 0]} zoom={3} scrollWheelZoom={false}>
         {list.map((item, i) => {
           {if(item.reclat && item.reclong !== undefined){
-              if(item.recclass === "H6" || item.recclass === "H5") {
+              if(item.recclass === "H6" || item.recclass === "H5" || item.recclass === "H3-5") {
                 return (
-              <Marker icon={this.getIconH6()} key={i} position={[item.reclat, item.reclong]}><Popup>
+              <Marker icon={this.getIconH()} key={i} position={[item.reclat, item.reclong]}><Popup>
               <p>Name: {item.name}</p>
                   <p>Id: {item.id}</p>
                   <p>Recclass: {item.recclass}</p>
@@ -96,9 +104,9 @@ class List extends Component {
                   <p>Longitude: {item.reclong}</p>
               </Popup></Marker>)
             
-        } else if (item.recclass === "L6"  || item.recclass === "L5" || item.recclass === "LL5" ) {
+        } else if (item.recclass === "L6"  || item.recclass === "L5" || item.recclass === "LL5" || item.recclass === "LL6" || item.recclass === "LL4" || item.recclass === "L4") {
           return (
-            <Marker icon={this.getIconL6()} key={i} position={[item.reclat, item.reclong]}><Popup>
+            <Marker icon={this.getIconL()} key={i} position={[item.reclat, item.reclong]}><Popup>
             <p>Name: {item.name}</p>
                 <p>Id: {item.id}</p>
                 <p>Recclass: {item.recclass}</p>
@@ -118,7 +126,18 @@ class List extends Component {
                 <p>Latitude: {item.reclat}</p>
                 <p>Longitude: {item.reclong}</p>
             </Popup></Marker>)
-        } else { 
+        } else if (item.recclass === "Aubrite" || item.recclass === "C" || item.recclass === "Unknown" || item.recclass === "Pallasite"  || item.recclass === "Eucrite-mmict") {
+          return (
+            <Marker icon={this.getIconVar()} key={i} position={[item.reclat, item.reclong]}><Popup>
+            <p>Name: {item.name}</p>
+                <p>Id: {item.id}</p>
+                <p>Recclass: {item.recclass}</p>
+                <p>Mass: {item.mass}</p>
+                <p>Year: {item.year}</p>
+                <p>Latitude: {item.reclat}</p>
+                <p>Longitude: {item.reclong}</p>
+            </Popup></Marker>)
+        }else { 
           return (
           <Marker icon={this.getIcon()} key={i} position={[item.reclat, item.reclong]}>              <Popup>
               <p>Name: {item.name}</p>
@@ -141,21 +160,33 @@ class List extends Component {
               </Popup>
               </Marker>
         </MapContainer>
-
+        <h1>List of Landings</h1>
         {/* Check to see if any items are found*/}
         {list.length ? (
-          <div>
+          <div className="landings__container">
             {/* Render the list of items */}
             {list.map((item, i) => {
               return (
-                <div key={i}>
-                  <p>Name: {item.name}</p>
-                  <p>Id: {item.id}</p>
-                  <p>Recclass: {item.recclass}</p>
-                  <p>Mass: {item.mass}</p>
-                  <p>Year: {item.year}</p>
-                  <p>Latitude: {item.reclat}</p>
-                  <p>Longitude: {item.reclong}</p>
+                <div className="landing__container" key={i}>
+                  {item.recclass === "H6" || item.recclass === "H5" || item.recclass === "H3-5" ? 
+                  <div className="landing__imgH"></div> 
+                  : item.recclass === "L6"  || item.recclass === "L5" || item.recclass === "LL5" || item.recclass === "LL6" || item.recclass === "LL4" || item.recclass === "L4" 
+                    ? <div className="landing__imgL"></div>
+                    : item.recclass === "Diogenite" || item.recclass === "Diogenite-pm" 
+                    ? <div className="landing__imgD"></div>
+                      : item.recclass === "Aubrite" || item.recclass === "C" || item.recclass === "Unknown" || item.recclass === "Pallasite"  || item.recclass === "Eucrite-mmict"
+                      ?<div className="landing__imgVar"></div>
+                      : <div className="landing__img"></div>}
+                  <div className="landing__container-info">
+                    <p className="landing__info">Name: {item.name}</p>
+                    <p className="landing__info">Id: {item.id}</p>
+                    <p className="landing__info">Recclass: {item.recclass}</p>
+                    <p className="landing__info">Mass: {item.mass}</p>
+                    <p className="landing__info">Year: {item.year}</p>
+                    <p className="landing__info">Latitude: {item.reclat}</p>
+                    <p className="landing__info">Longitude: {item.reclong}</p>
+                    <button>DELETE LANDING</button>
+                  </div>
                 </div>
               );
             })}
