@@ -66,7 +66,6 @@ export default function Landings() {
 return (
   <div className="landings">
   <Leaflet data={list}/>
-  <h1>Filter landings</h1>
   <FilterLandings/>
   <Landing data={list} />
 </div>

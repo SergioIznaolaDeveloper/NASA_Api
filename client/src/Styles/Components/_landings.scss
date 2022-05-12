@@ -1,14 +1,13 @@
-@import "../Utils/variables.scss";
-@import "../Utils/mixings.scss";
+@import '../Utils/variables.scss';
+@import '../Utils/mixings.scss';
 
-
-.landings{
+.landings {
   margin: 80px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  &__container{
+  &__container {
     width: 98vw;
     display: flex;
     flex-flow: row wrap;
@@ -16,9 +15,9 @@
   }
 }
 
-#map { 
-  height: 500px; 
-  width: 1000px; 
+#map {
+  height: 500px;
+  width: 1080px;
   border: solid 3px white;
   background-color: #000f1f;
   border-radius: 5px;
@@ -28,116 +27,114 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   box-shadow: 0px 0px 15px #000000;
-
 }
-
 
 .landing {
- width: 350px;
- box-shadow: 0px 0px 5px #0000003b;
- background-image: url('../../assets/card_background.jpg');
- background-position: center;
- background-size: cover;
- display: flex;
- flex-flow: row;
- justify-content: center;
- align-items: center;
- border-radius: 5px;
- margin: 5px;
- border: #085199 solid 3px;
-}
-
-.landing__container-info{
-  margin: 10px;
-  display: flex;
-  flex-flow: column;
-  font-weight: 600;
-}
-.data-data{
+  width: 350px;
+  box-shadow: 0px 0px 5px #00000086;
+  background-image: url('../../assets/card_background.jpg');
+  background-position: center;
+  background-size: cover;
   display: flex;
   flex-flow: row;
-  align-items: center;  
-}
-.landing__info-t{
-  color: #085199;
-  margin: 3px;
-}
-.landing__info{
-  color: #e8122b;
-  margin: 3px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 5px;
+  border: #085199 solid 3px;
+  &__container-info {
+    margin: 10px;
+    display: flex;
+    flex-flow: column;
+    font-weight: 600;
+  }
+  &__info-t {
+    color: #085199;
+    margin: 3px;
+  }
+  &__info {
+    color: #e8122b;
+    margin: 3px;
+  }
+  &__button {
+    padding: 2px;
+    margin-top: 5px;
+    border-radius: 15px;
+    border: transparent;
+    color: white;
+    font-family: 'Strait', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.425);
+    background-color: #e8122b;
+    width: 200px;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  &__button:hover {
+    background-color: #085199;
+    color: white;
+  }
+  &__imgH {
+    filter: drop-shadow(0px 0px 5px #222);
+    margin-left: 10px;
+    background-image: url('../../Static/Icons/H6.png');
+    background-position: center;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+  }
+  &__imgL {
+    filter: drop-shadow(0px 0px 5px #222);
+    margin-left: 10px;
+    background-image: url('../../Static/Icons/L6.png');
+    background-position: center;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+  }
 
-}
-.landing__button{
-padding: 2px;
-margin-top: 5px;
-border-radius: 15px;
-border: transparent;
-color: white;
-font-family: 'Strait', sans-serif;
-font-size: 15px;
-font-weight: 600;
-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.425);
-background-color: #e8122b;
-width: 200px;
-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.landing__button:hover{
-  background-color: #085199;
-  color: white;
-}
-.landing__imgH{
-  filter: drop-shadow(0px 0px 5px #222);
-  margin-left: 10px;
-  background-image: url('../../Static/Icons/H6.png');
-  background-position: center;
-  background-size: cover;
-  width: 100px;
-  height: 100px;
-}
-.landing__imgL{
-  filter: drop-shadow(0px 0px 5px #222);
-  margin-left: 10px;
-  background-image: url('../../Static/Icons/L6.png');
-  background-position: center;
-  background-size: cover;
-  width: 100px;
-  height: 100px;
+  &__imgD {
+    filter: drop-shadow(0px 0px 5px #222);
+    margin-left: 10px;
+    background-image: url('../../Static/Icons/diogenite.png');
+    background-position: center;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+  }
+  &__imgVar {
+    filter: drop-shadow(0px 0px 5px #222);
+    margin-left: 10px;
+    background-image: url('../../Static/Icons/undefined.png');
+    background-position: center;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+  }
 }
 
-.landing__imgD{
-  filter: drop-shadow(0px 0px 5px #222);
-  margin-left: 10px;
-  background-image: url('../../Static/Icons/diogenite.png');
-  background-position: center;
-  background-size: cover;
-  width: 100px;
-  height: 100px;
+.data-data {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
 }
-.landing__imgVar{
-  filter: drop-shadow(0px 0px 5px #222);
-  margin-left: 10px;
-  background-image: url('../../Static/Icons/undefined.png');
-  background-position: center;
-  background-size: cover;
-  width: 100px;
-  height: 100px;
-}
-.id-img{
+
+.id-img {
   display: flex;
   justify-content: flex-start;
   height: 100%;
   align-items: center;
   flex-flow: column;
 }
-.landing__id{
+.landing__id {
   align-self: flex-start;
   color: #085199;
   font-size: 30px;
   margin: 10px;
   margin-bottom: 10px;
   font-weight: 600;
- }
-.landing__img{
+}
+.landing__img {
   filter: drop-shadow(0px 0px 5px #222);
   margin-left: 10px;
   background-image: url('../../Static/Icons/asteroide.png');
@@ -147,4 +144,121 @@ transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
   height: 100px;
   margin-bottom: 10px;
 }
+
+.fLandings__form {
+  border: solid 3px white;
+  border-radius: 5px;
+  background-image: url('../../assets/fondo_filter.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 5px #00000086;
+  color: white;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 1080px;
+  &-form1 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  margin: 10px;
+  &-two {
+    margin: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+  .fLandings__label {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  .fLandings__input {
+    border-radius: 2px;
+    border: transparent;
+    height: 20px;
+    width: 200px;
+  }
+  .fLandings__button-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .fLandings__button {
+    font-family: 'Strait', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    margin: 5px;
+    border-radius: 5px;
+    border: transparent;
+    height: 25px;
+    width: 205px;
+    margin: 10px;
+  }
+  .fLandings__button:hover {
+    background-color: #e8122b;
+    color: white;
+  }
+}
+.charging{
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  background-image: url('../../assets/loading.gif');
+  background-position: center;
+  background-size: cover;
+}
+.pagination__container{
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  #map {
+    margin-top: 20px;
+    height: 500px;
+    width: 720px;
+  }
+  .fLandings__form {
+    width: 720px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #map {
+    margin-top: 20px;
+    height: 420px;
+    width: 420px;
+  }
+  .fLandings__form {
+    width: 420px;
+  }
+}
+@media screen and (max-width: 425px) {
+  #map {
+    margin-top: 20px;
+    height: 370px;
+    width: 370px;
+  }
+  .fLandings__form {
+    width: 370px;
+  }
+}
+@media screen and (max-width: 375px) {
+  #map {
+    margin-top: 20px;
+    height: 310px;
+    width: 310px;
+  }
+  .fLandings__form {
+    width: 310px;
+  }
+}
+
 

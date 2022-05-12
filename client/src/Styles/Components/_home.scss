@@ -8,21 +8,33 @@
   align-items: center;
   margin: 50px 0px 50px 0px;
 }
-
-.home__explanation{
-  width: 60%;
+.home__title{
+  width: 71%;
   text-align: justify;
-  margin: 10px 0px 0px 5px;
+  margin: 20px 0px 0px;
+  font-size: 25px;
+  font-weight: 600;
+}
+.home__explanation{
+  width: 71%;
+  text-align: justify;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 500;
 }
 .home__author-date{
   font-weight: 600;
-  width: 60%;
+  width: 71%;
   margin-top: 10px;
 }
 .home__video{
   width: 70vw;
   height: 45vw;
+  box-shadow: 0px 0px 5px #0000003b;
 }
 .home__picture{
-  width: 60vw;
+  border-radius: 5px;
+  border: solid 3px white;
+  width: 70vw;
+  box-shadow: 0px 0px 5px #00000086;
 }

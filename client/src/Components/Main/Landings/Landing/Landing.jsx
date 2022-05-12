@@ -1,10 +1,16 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { LandingContext } from "../../../../Context/LandingContext";
 
 
 export default function Landing(props) {
-
+  const {nextPage, prevPage} = useContext(LandingContext);
+  
   return ( 
     <div>{/* Check to see if any items are found*/}
+      <div className='pagination__container'>
+        <button onClick={prevPage} className='back__button'></button>
+        <button onClick={nextPage} className='next__button'></button>
+      </div>
     {props.data.length ? (
       <div className="landings__container">
         {/* Render the props.data of items */}
@@ -63,7 +69,7 @@ export default function Landing(props) {
       </div>
     ) : (
       <div>
-        <h2>No data Items Found</h2>
+        <div className='charging'></div>
       </div>
     )}</div>
   )

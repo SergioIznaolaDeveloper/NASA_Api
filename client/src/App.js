@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { PicContext } from "./Context/PicContext";
 import { NavigatorContext } from './Context/NavigatorContext';
 import { LandingContext } from './Context/LandingContext';
@@ -14,6 +14,21 @@ export default function App() {
   const [pic, setPic] = useState([]);
   const [navActive, setNavActive] = useState("home");
   const [landingInputs, setLandingInputs] = useState([""]); // state para almacenar el texto del input
+  const [pagination, setPagination] = useState({first: 0, last: 10})
+  
+
+  const prevPage = async (e) => {
+    e.preventDefault()
+    setPagination({first: pagination.first - 10, last: pagination.last - 10})
+  }
+
+  const nextPage = async (e) => {
+    e.preventDefault()
+    setPagination({first: pagination.first + 10, last: pagination.last + 10})
+  }
+
+
+
 
   const getPic = async () => {
     if (pic.length === 0) {
@@ -62,6 +77,8 @@ export default function App() {
     onChangeInputLClass,
     onChangeInputLFrom,
     onChangeInputLTo,
+    prevPage,
+    nextPage,
   }
     // funcion para recoger la mass de landing seleccionado desde input
 
@@ -69,7 +86,6 @@ export default function App() {
   getPic()
   return (
     <div className="App">
-      
       <NavigatorContext.Provider value={nav}>
       <Header />
       <LandingContext.Provider value={landing}>
