@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { PicContext } from "./Context/PicContext";
 import { NavigatorContext } from './Context/NavigatorContext';
 import { LandingContext } from './Context/LandingContext';
@@ -6,30 +6,26 @@ import Main from "./Components/Main/Main";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import axios from "axios";
-import Styles from "./Styles/Styles.scss";
-
+import "./Styles/Styles.scss";
 
 
 export default function App() {
-  const [pic, setPic] = useState([]);
-  const [navActive, setNavActive] = useState("home");
-  const [landingInputs, setLandingInputs] = useState([""]); // state para almacenar el texto del input
-  const [pagination, setPagination] = useState({first: 0, last: 10})
+  const [pic, setPic] = useState([]); // Datos para la home
+  const [navActive, setNavActive] = useState("home"); // Estado botón de navegacion
+  const [landingInputs, setLandingInputs] = useState([""]); // texto del input
+  const [pagination, setPagination] = useState({first: 0, last: 10}) // Paginación
   
-
+// Funcion para cambiar el estado de la paginacion en PREV
   const prevPage = async (e) => {
     e.preventDefault()
     setPagination({first: pagination.first - 10, last: pagination.last - 10})
   }
-
+// Funcion para cambiar el estado de la paginacion en NEXT
   const nextPage = async (e) => {
     e.preventDefault()
     setPagination({first: pagination.first + 10, last: pagination.last + 10})
   }
-
-
-
-
+  // Obtencion de datos de la API para HOME
   const getPic = async () => {
     if (pic.length === 0) {
     const resp = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=SghyhGIE4leHawTWG85CIDKfT94zvIoQBOOwdIX5`);
@@ -37,20 +33,24 @@ export default function App() {
     setPic({pic: data.url, type: data.media_type, title: data.title, date: data.date, explanation: data.explanation, copyright: data.copyright}); //setPic(data);
     } 
   }
+  // Añadir busqueda por mass
   const onChangeInputLMass = async (e) => {
     e.preventDefault();
     setLandingInputs(["mass", e.target.value]);
   };
+  // Añadir busqueda por class
   const onChangeInputLClass = async (e) => {
     e.preventDefault();
     setLandingInputs(["class", e.target.value]);
   };
+  // Añadir busqueda from ...
   const onChangeInputLFrom = async (e) => {
     e.preventDefault();
     landingInputs[0] === "to"
     ? setLandingInputs([...landingInputs,"from", e.target.value])
     : setLandingInputs(["from", e.target.value]);
   };
+   // Añadir busqueda to ...
   const onChangeInputLTo = async (e) => {
     e.preventDefault();
     landingInputs[0] === "from"

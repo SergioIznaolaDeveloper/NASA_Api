@@ -3,13 +3,16 @@ import Landing from './Landing'
 import FilterLandings from './FilterLandings';
 import Leaflet from '../../../hooks/leaflet'
 import { LandingContext } from "../../../Context/LandingContext";
+import { NavigatorContext } from "../../../Context/NavigatorContext";
 
 
 export default function Landings() {
   const [list, setList] = useState([])
   const {landingInputs, pagination} = useContext(LandingContext);
+  const {setNavActive} = useContext(NavigatorContext);
 
   useEffect(() => {
+    setNavActive("landings");
     getList()
   } , [landingInputs, pagination])
 

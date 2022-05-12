@@ -11,18 +11,20 @@ export default function Landing(props) {
   } , [props])
 
   return ( 
-    <div>{/* Check to see if any items are found*/}
+    <section className='pag-land__container'>{/* Check to see if any items are found*/}
       <div className='pagination__container'>
-        {tenToTen.length === 10
+        {tenToTen.length !== 0
         ? pagination.first === 0
-          ? <><p className='pagination__number'></p><p className='pagination__button'></p></>
-          : <><p className='pagination__number'>{pagination.first}</p><button onClick={prevPage} className='pagination__button'>PREV</button></>
+          ? pagination.last + tenToTen.length === props.data.length 
+            ?<><></></>
+            :<><></></>
+          : <><div onClick={prevPage} className='arrow-L'></div><p className='pagination__number'>{pagination.first} -</p></>
           : <></>}
           { tenToTen.length === 10
-          ? pagination.last > tenToTen.length
-          ? <p><p></p></p>
-          : <><button onClick={nextPage} className='pagination__button'>NEXT</button><p>{pagination.last}</p></>
-          : <p><p></p></p>}
+          ? pagination.last < tenToTen.length
+          ? <><></></>
+          : <><p className='pagination__number'>{pagination.last}</p><div onClick={nextPage} className='arrow-R'></div></>
+          : <><></></>}
       </div>
     {tenToTen.length ? (
       <div className="landings__container">
@@ -84,6 +86,6 @@ export default function Landing(props) {
       <div>
         <div className='charging'></div>
       </div>
-    )}</div>
+    )}</section>
   )
 }
