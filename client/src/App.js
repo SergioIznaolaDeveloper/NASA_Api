@@ -71,6 +71,7 @@ export default function App() {
     onClickToHome,
   };
   const landing = {
+    pagination,
     landingInputs,
     setLandingInputs,
     onChangeInputLMass,

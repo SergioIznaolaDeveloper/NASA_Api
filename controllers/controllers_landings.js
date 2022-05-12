@@ -10,8 +10,7 @@ const getLandingsMass = async (req, res) => {
   let data;
   try {
     if (req.params.mass) {
-      console.log(req.params);
-      data = await Landing.find({ mass: { $gte: req.params.mass } }, "-_id").sort({ mass: 1 });
+      data = await Landing.find({ mass: { $gte: req.params.mass } }, "-_id").sort({mass: 1});
       res.status(200).json(data);
     } else {
       data = await Landing.find({});
@@ -23,7 +22,6 @@ const getLandingsMass = async (req, res) => {
 };
 
 const getLandingClass = async (req, res) => {
-  console.log(req.params);
   let data;
   try {
     if (req.params.recclass) {
@@ -38,7 +36,6 @@ const getLandingClass = async (req, res) => {
   }
 };
 const getLandingsQuery = async (req, res) => {
-  console.log(req.query);
   let data;
   try {
     if (req.query.from && req.query.to) {

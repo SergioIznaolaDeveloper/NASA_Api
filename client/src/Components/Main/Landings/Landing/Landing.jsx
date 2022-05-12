@@ -1,24 +1,37 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { LandingContext } from "../../../../Context/LandingContext";
 
 
 export default function Landing(props) {
-  const {nextPage, prevPage} = useContext(LandingContext);
+  const {nextPage, prevPage, pagination} = useContext(LandingContext);
+  const [tenToTen, setTenToTen] = useState([])
   
+  useEffect(() => {
+    setTenToTen(props.data.slice(pagination.first, pagination.last))
+  } , [props])
+
   return ( 
     <div>{/* Check to see if any items are found*/}
       <div className='pagination__container'>
-        <button onClick={prevPage} className='back__button'></button>
-        <button onClick={nextPage} className='next__button'></button>
+        {tenToTen.length === 10
+        ? pagination.first === 0
+          ? <><p className='pagination__number'></p><p className='pagination__button'></p></>
+          : <><p className='pagination__number'>{pagination.first}</p><button onClick={prevPage} className='pagination__button'>PREV</button></>
+          : <></>}
+          { tenToTen.length === 10
+          ? pagination.last > tenToTen.length
+          ? <p><p></p></p>
+          : <><button onClick={nextPage} className='pagination__button'>NEXT</button><p>{pagination.last}</p></>
+          : <p><p></p></p>}
       </div>
-    {props.data.length ? (
+    {tenToTen.length ? (
       <div className="landings__container">
         {/* Render the props.data of items */}
-        {props.data.map((item, i) => {
+        {tenToTen.map((item, i) => {
           return (
             <div className="landing" key={i}>
               <div className="id-img">
-                <p className='landing__id'>#{i+1}</p>
+                <p className='landing__id'>#{i+1+pagination.first}</p>
                 {item.recclass === "H6" || item.recclass === "H5" || item.recclass === "H3-5" || item.recclass === "H" || item.recclass === "H4" ? 
                 <div className="landing__imgH"></div> 
                 : item.recclass === "L6"  || item.recclass === "L5" || item.recclass === "LL5" || item.recclass === "LL6" || item.recclass === "LL4" || item.recclass === "L4" 
