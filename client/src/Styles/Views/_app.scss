@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap');
+@import "../Utils/variables.scss";
+
+.App{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: 'Strait', sans-serif;
+  background-color: #e8e8e8;
+}

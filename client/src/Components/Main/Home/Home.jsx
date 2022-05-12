@@ -4,11 +4,11 @@ import { NavigatorContext } from "../../../Context/NavigatorContext";
 
 export default function Home() {
   const { pic } = useContext(PicContext);
-  const {setNavActive} = useContext(NavigatorContext);
+  const {setNavActive, onClickToHome} = useContext(NavigatorContext);
   useEffect(() => {
     setNavActive("home");
+    onClickToHome();
   } , [])
-console.log(pic.pic);
   return (
     <div className="home">
       <h1 className="home__title">{pic.title}</h1>

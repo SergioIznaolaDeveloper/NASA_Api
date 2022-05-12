@@ -1,0 +1,150 @@
+@import "../Utils/variables.scss";
+@import "../Utils/mixings.scss";
+
+
+.landings{
+  margin: 80px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__container{
+    width: 98vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+
+#map { 
+  height: 500px; 
+  width: 1000px; 
+  border: solid 3px white;
+  background-color: #000f1f;
+  border-radius: 5px;
+  background-image: url('../../assets/galaxy.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  box-shadow: 0px 0px 15px #000000;
+
+}
+
+
+.landing {
+ width: 350px;
+ box-shadow: 0px 0px 5px #0000003b;
+ background-image: url('../../assets/card_background.jpg');
+ background-position: center;
+ background-size: cover;
+ display: flex;
+ flex-flow: row;
+ justify-content: center;
+ align-items: center;
+ border-radius: 5px;
+ margin: 5px;
+ border: #085199 solid 3px;
+}
+
+.landing__container-info{
+  margin: 10px;
+  display: flex;
+  flex-flow: column;
+  font-weight: 600;
+}
+.data-data{
+  display: flex;
+  flex-flow: row;
+  align-items: center;  
+}
+.landing__info-t{
+  color: #085199;
+  margin: 3px;
+}
+.landing__info{
+  color: #e8122b;
+  margin: 3px;
+
+}
+.landing__button{
+padding: 2px;
+margin-top: 5px;
+border-radius: 15px;
+border: transparent;
+color: white;
+font-family: 'Strait', sans-serif;
+font-size: 15px;
+font-weight: 600;
+box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.425);
+background-color: #e8122b;
+width: 200px;
+transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.landing__button:hover{
+  background-color: #085199;
+  color: white;
+}
+.landing__imgH{
+  filter: drop-shadow(0px 0px 5px #222);
+  margin-left: 10px;
+  background-image: url('../../Static/Icons/H6.png');
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+}
+.landing__imgL{
+  filter: drop-shadow(0px 0px 5px #222);
+  margin-left: 10px;
+  background-image: url('../../Static/Icons/L6.png');
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.landing__imgD{
+  filter: drop-shadow(0px 0px 5px #222);
+  margin-left: 10px;
+  background-image: url('../../Static/Icons/diogenite.png');
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+}
+.landing__imgVar{
+  filter: drop-shadow(0px 0px 5px #222);
+  margin-left: 10px;
+  background-image: url('../../Static/Icons/undefined.png');
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+}
+.id-img{
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  align-items: center;
+  flex-flow: column;
+}
+.landing__id{
+  align-self: flex-start;
+  color: #085199;
+  font-size: 30px;
+  margin: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+ }
+.landing__img{
+  filter: drop-shadow(0px 0px 5px #222);
+  margin-left: 10px;
+  background-image: url('../../Static/Icons/asteroide.png');
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+

@@ -10,16 +10,16 @@ export default function Landing(props) {
         {/* Render the props.data of items */}
         {props.data.map((item, i) => {
           return (
-            <div className="landing__container" key={i}>
+            <div className="landing" key={i}>
               <div className="id-img">
                 <p className='landing__id'>#{i+1}</p>
-                {item.recclass === "H6" || item.recclass === "H5" || item.recclass === "H3-5" ? 
+                {item.recclass === "H6" || item.recclass === "H5" || item.recclass === "H3-5" || item.recclass === "H" || item.recclass === "H4" ? 
                 <div className="landing__imgH"></div> 
                 : item.recclass === "L6"  || item.recclass === "L5" || item.recclass === "LL5" || item.recclass === "LL6" || item.recclass === "LL4" || item.recclass === "L4" 
                   ? <div className="landing__imgL"></div>
                   : item.recclass === "Diogenite" || item.recclass === "Diogenite-pm" 
                   ? <div className="landing__imgD"></div>
-                    : item.recclass === "Aubrite" || item.recclass === "C" || item.recclass === "Unknown" || item.recclass === "Pallasite"  || item.recclass === "Eucrite-mmict"
+                    : item.recclass === "Aubrite" || item.recclass === "C" || item.recclass === "Unknown" || item.recclass === "Pallasite"  || item.recclass === "Eucrite-mmict" || item.recclass === "Ureilite-an" || item.recclass === "Eucrite-pmict"
                     ?<div className="landing__imgVar"></div>
                     : <div className="landing__img"></div>}
                 </div>
@@ -29,6 +29,11 @@ export default function Landing(props) {
                 <p className="landing__info">{item.name}</p>
               </div>
               <div className='data-data'>
+                <p className="landing__info-t">Mass: </p>
+                <p className="landing__info">{item.mass}</p>
+              </div>
+              
+              <div className='data-data'>
                 <p className="landing__info-t">Id:</p>
                 <p className="landing__info">{item.id}</p>
               </div>
@@ -37,23 +42,19 @@ export default function Landing(props) {
                 <p className="landing__info">{item.recclass}</p>
               </div>
               <div className='data-data'>
-                <p className="landing__info-t">Mass: </p>
-                <p className="landing__info">{item.mass}</p>
-              </div>
-              <div className='data-data'>
                 <p className="landing__info-t">Year: </p>
                 <p className="landing__info">{item.year}</p>
               </div>
               <div className='data-data'>
                 <p className="landing__info-t">Latitude: </p>
                 <p className="landing__info">{item.reclat}</p>
-                </div>
+              </div>
               <div className='data-data'>
                 <p className="landing__info-t">Longitude: </p>
                 <p className="landing__info">{item.reclong}</p>
               </div>
               <form action={`/api/astronomy/landings/delete/${item.id}`}method='POST'>
-                <button className='landing__button'>DELETE LANDING</button>
+                <button className='landing__button'>DESTROY LANDING</button>
                 </form>
               </div>
             </div>

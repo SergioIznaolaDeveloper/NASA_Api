@@ -1,0 +1,14 @@
+@import "../Utils/variables.scss";
+@import "../Utils/mixings.scss";
+
+.footer{
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-image: url('../../assets/fondo_filter.jpg');
+}

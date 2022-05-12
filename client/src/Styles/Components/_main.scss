@@ -1,0 +1,13 @@
+@import "../Utils/variables.scss";
+@import "../Utils/mixings.scss";
+
+.main {
+  @include column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  &__title{
+    color: #006d77;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+  }
+}

@@ -62,15 +62,15 @@ const getIconSun = () => {
     iconSize: [60],
   });
 }
+
   return (
-    <MapContainer id="map" center={[getSunEuler()[0], 0]} zoom={3} scrollWheelZoom={false}>
+    <MapContainer id="map" center={[getSunEuler()[0], getSunEuler()[1]]} zoom={3} scrollWheelZoom={false}>
     {props.data.map((item, i) => {
       {if(item.reclat && item.reclong !== undefined){
-          if(item.recclass === "H6" || item.recclass === "H5" || item.recclass === "H3-5") {
+          if(item.recclass === "H6" || item.recclass === "H5" || item.recclass === "H3-5" || item.recclass === "H" || item.recclass === "H4") {
             return (
-          <Marker icon={getIconH()} key={i} position={[item.reclat, item.reclong]}><Popup>
+          <Marker icon={getIconH()} key={i} position={[item.reclat, item.reclong]}><Popup >
           <p>Name: {item.name}</p>
-              <p>Id: {item.id}</p>
               <p>Recclass: {item.recclass}</p>
               <p>Mass: {item.mass}</p>
               <p>Year: {item.year}</p>
@@ -82,7 +82,6 @@ const getIconSun = () => {
       return (
         <Marker icon={getIconL()} key={i} position={[item.reclat, item.reclong]}><Popup>
         <p>Name: {item.name}</p>
-            <p>Id: {item.id}</p>
             <p>Recclass: {item.recclass}</p>
             <p>Mass: {item.mass}</p>
             <p>Year: {item.year}</p>
@@ -93,18 +92,16 @@ const getIconSun = () => {
       return (
         <Marker icon={getIconDio()} key={i} position={[item.reclat, item.reclong]}><Popup>
         <p>Name: {item.name}</p>
-            <p>Id: {item.id}</p>
             <p>Recclass: {item.recclass}</p>
             <p>Mass: {item.mass}</p>
             <p>Year: {item.year}</p>
             <p>Latitude: {item.reclat}</p>
             <p>Longitude: {item.reclong}</p>
         </Popup></Marker>)
-    } else if (item.recclass === "Aubrite" || item.recclass === "C" || item.recclass === "Unknown" || item.recclass === "Pallasite"  || item.recclass === "Eucrite-mmict") {
+    } else if (item.recclass === "Aubrite" || item.recclass === "C" || item.recclass === "Unknown" || item.recclass === "Pallasite"  || item.recclass === "Eucrite-mmict" || item.recclass === "Ureilite-an" || item.recclass === "Eucrite-pmict") {
       return (
         <Marker icon={getIconVar()} key={i} position={[item.reclat, item.reclong]}><Popup>
         <p>Name: {item.name}</p>
-            <p>Id: {item.id}</p>
             <p>Recclass: {item.recclass}</p>
             <p>Mass: {item.mass}</p>
             <p>Year: {item.year}</p>
@@ -115,7 +112,6 @@ const getIconSun = () => {
       return (
       <Marker icon={getIcon()} key={i} position={[item.reclat, item.reclong]}>              <Popup>
           <p>Name: {item.name}</p>
-              <p>Id: {item.id}</p>
               <p>Recclass: {item.recclass}</p>
               <p>Mass: {item.mass}</p>
               <p>Year: {item.year}</p>

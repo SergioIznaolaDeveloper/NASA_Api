@@ -1,0 +1,55 @@
+@import './Views/app';
+@import './Components/nav';
+@import './Components/landings';
+@import './Components/footer';
+@import './Components/header';
+@import './Components/from';
+@import './Components/main';
+@import './Components/home';
+
+@import url('https://fonts.googleapis.com/css2?family=Strait&display=swap');
+
+
+
+
+.neas{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin:50px 0px; 
+  color: #e8122b;
+}
+
+.delete__img{
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  background-image: url('../assets/delete.gif');
+}
+.fLandings__form{
+  border: solid 3px white;
+  border-radius: 5px;
+  padding: 15px;
+  background-image: url('../assets/fondo_filter.jpg');
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.fLandings__form-two{
+  margin: 10px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}

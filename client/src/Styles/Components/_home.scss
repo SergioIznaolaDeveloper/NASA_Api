@@ -1,0 +1,28 @@
+@import "../Utils/variables.scss";
+@import "../Utils/mixings.scss";
+
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px 50px 0px;
+}
+
+.home__explanation{
+  width: 60%;
+  text-align: justify;
+  margin: 10px 0px 0px 5px;
+}
+.home__author-date{
+  font-weight: 600;
+  width: 60%;
+  margin-top: 10px;
+}
+.home__video{
+  width: 70vw;
+  height: 45vw;
+}
+.home__picture{
+  width: 60vw;
+}

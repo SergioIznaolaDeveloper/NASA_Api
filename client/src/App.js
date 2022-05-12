@@ -1,16 +1,19 @@
 import React, {useState} from 'react';
 import { PicContext } from "./Context/PicContext";
 import { NavigatorContext } from './Context/NavigatorContext';
+import { LandingContext } from './Context/LandingContext';
 import Main from "./Components/Main/Main";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import axios from "axios";
+import Styles from "./Styles/Styles.scss";
 
 
 
 export default function App() {
   const [pic, setPic] = useState([]);
   const [navActive, setNavActive] = useState("home");
+  const [landingInputs, setLandingInputs] = useState([""]); // state para almacenar el texto del input
 
   const getPic = async () => {
     if (pic.length === 0) {
@@ -19,23 +22,61 @@ export default function App() {
     setPic({pic: data.url, type: data.media_type, title: data.title, date: data.date, explanation: data.explanation, copyright: data.copyright}); //setPic(data);
     } 
   }
+  const onChangeInputLMass = async (e) => {
+    e.preventDefault();
+    setLandingInputs(["mass", e.target.value]);
+  };
+  const onChangeInputLClass = async (e) => {
+    e.preventDefault();
+    setLandingInputs(["class", e.target.value]);
+  };
+  const onChangeInputLFrom = async (e) => {
+    e.preventDefault();
+    landingInputs[0] === "to"
+    ? setLandingInputs([...landingInputs,"from", e.target.value])
+    : setLandingInputs(["from", e.target.value]);
+  };
+  const onChangeInputLTo = async (e) => {
+    e.preventDefault();
+    landingInputs[0] === "from"
+    ? setLandingInputs([...landingInputs,"to", e.target.value])
+    : setLandingInputs(["to", e.target.value]);
+
+  };
+  const onClickToHome = () => {
+    setLandingInputs([""]);
+  };
   const infoPicture = {
   pic,
   getPic,
   };
   const nav = {
     navActive, 
-    setNavActive
+    setNavActive,
+    onClickToHome,
   };
+  const landing = {
+    landingInputs,
+    setLandingInputs,
+    onChangeInputLMass,
+    onChangeInputLClass,
+    onChangeInputLFrom,
+    onChangeInputLTo,
+  }
+    // funcion para recoger la mass de landing seleccionado desde input
+
 
   getPic()
   return (
     <div className="App">
+      
       <NavigatorContext.Provider value={nav}>
       <Header />
+      <LandingContext.Provider value={landing}>
       <PicContext.Provider value={infoPicture}>
       <Main />
       </PicContext.Provider>
+      </LandingContext.Provider>
       </NavigatorContext.Provider>
       <Footer />
     </div>
