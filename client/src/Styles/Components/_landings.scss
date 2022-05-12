@@ -317,4 +317,14 @@ margin: 5px;
   .fLandings__form {
     width: 310px;
   }
+  .id-img{
+    width: 230px;
+    height: 150px;
+  }
+  .landing {
+    flex-flow: row wrap;
+    &__img{
+      margin: 0px;
+    }
+}
 }
