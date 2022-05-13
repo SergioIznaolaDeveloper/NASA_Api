@@ -1,5 +1,7 @@
 @import './Views/app';
+@import './Utils/screens';
 @import './Components/landings';
+@import './Components/landing';
 @import './Components/footer';
 @import './Components/header';
 @import './Components/from';
@@ -9,7 +11,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Strait&display=swap');
 
 
-
+@media screen and (max-width: 1024px) {
+  #map {
+    margin-top: 20px;
+    height: 500px;
+    width: 720px;
+  }
+  .fLandings__form {
+    width: 720px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #map {
+    margin-top: 20px;
+    height: 420px;
+    width: 420px;
+  }
+  .fLandings__form {
+    width: 420px;
+  }
+}
+@media screen and (max-width: 425px) {
+  #map {
+    margin-top: 20px;
+    height: 370px;
+    width: 370px;
+  }
+  .fLandings__form {
+    width: 370px;
+  }
+}
+@media screen and (max-width: 375px) {
+  #map {
+    margin-top: 20px;
+    height: 310px;
+    width: 310px;
+  }
+  .fLandings__form {
+    width: 310px;
+  }
+}
 
 .neas{
   margin-top: 50px;

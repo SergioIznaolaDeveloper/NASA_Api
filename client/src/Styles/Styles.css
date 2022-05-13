@@ -81,6 +81,109 @@ body {
           box-shadow: 0px 0px 15px #000000;
 }
 
+.fLandings__form {
+  border: solid 3px white;
+  border-radius: 5px;
+  background-image: url("../../assets/fondo_filter.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0px 0px 5px #00000086;
+          box-shadow: 0px 0px 5px #00000086;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1080px;
+  margin: 10px;
+}
+
+.fLandings__form-form1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fLandings__form-two {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.fLandings__form .fLandings__label {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.fLandings__form .fLandings__input {
+  border-radius: 2px;
+  border: transparent;
+  height: 20px;
+  width: 200px;
+}
+
+.fLandings__form .fLandings__button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.fLandings__form .fLandings__button {
+  font-family: 'Strait', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  margin: 5px;
+  border-radius: 5px;
+  border: transparent;
+  height: 25px;
+  width: 205px;
+  margin: 10px;
+}
+
+.fLandings__form .fLandings__button:hover {
+  background-color: #e8122b;
+  color: white;
+}
+
 .landing {
   width: 350px;
   -webkit-box-shadow: 0px 0px 5px #00000086;
@@ -246,159 +349,125 @@ body {
   margin-bottom: 10px;
 }
 
-.fLandings__form {
-  border: solid 3px white;
-  border-radius: 5px;
-  background-image: url("../../assets/fondo_filter.jpg");
-  background-position: bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-box-shadow: 0px 0px 5px #00000086;
-          box-shadow: 0px 0px 5px #00000086;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 1080px;
-  margin: 10px;
-}
-
-.fLandings__form-form1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.fLandings__form-two {
-  margin: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.fLandings__form .fLandings__label {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-.fLandings__form .fLandings__input {
-  border-radius: 2px;
-  border: transparent;
-  height: 20px;
+.charging {
   width: 200px;
-}
-
-.fLandings__form .fLandings__button-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 15px;
-}
-
-.fLandings__form .fLandings__button {
-  font-family: 'Strait', sans-serif;
-  font-size: 15px;
-  font-weight: 800;
-  margin: 5px;
-  border-radius: 5px;
-  border: transparent;
-  height: 25px;
-  width: 205px;
-  margin: 10px;
-}
-
-.fLandings__form .fLandings__button:hover {
-  background-color: #e8122b;
-  color: white;
-}
-
-.loader {
-  width: 300px;
-  height: 300px;
+  height: 200px;
+  margin-top: 20px;
   background-image: url("../../assets/loading.gif");
   background-position: center;
   background-size: cover;
 }
 
-@media screen and (max-width: 1024px) {
-  #map {
-    margin-top: 20px;
-    height: 500px;
-    width: 720px;
-  }
-  .fLandings__form {
-    width: 720px;
+.pag-land__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px;
+}
+
+.arrow-L,
+.arrow-R {
+  -webkit-filter: drop-shadow(-3px 0px 1px rgba(34, 34, 34, 0.498));
+          filter: drop-shadow(-3px 0px 1px rgba(34, 34, 34, 0.498));
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: -ms-grid;
+  display: grid;
+  overflow: hidden;
+}
+
+.arrow-L {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.arrow-R:before,
+.arrow-R:after {
+  content: "";
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1/1;
+  background-image: url("../../assets/fondo_filter.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-clip-path: polygon(0 10px, calc(100% - 15px) 10px, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, calc(100% - 15px) calc(100% - 10px), 0 calc(100% - 10px));
+          clip-path: polygon(0 10px, calc(100% - 15px) 10px, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, calc(100% - 15px) calc(100% - 10px), 0 calc(100% - 10px));
+  -webkit-animation: a5 1s infinite;
+          animation: a5 1s infinite;
+  -webkit-transform: translate(calc(0% + var(--s,0%)));
+          transform: translate(calc(0% + var(--s,0%)));
+}
+
+.arrow-L:before,
+.arrow-L:after {
+  content: "";
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1/1;
+  background-image: url("../../assets/fondo_filter.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-clip-path: polygon(0 10px, calc(100% - 15px) 10px, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, calc(100% - 15px) calc(100% - 10px), 0 calc(100% - 10px));
+          clip-path: polygon(0 10px, calc(100% - 15px) 10px, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, calc(100% - 15px) calc(100% - 10px), 0 calc(100% - 10px));
+  -webkit-animation: a5 1s infinite;
+          animation: a5 1s infinite;
+  -webkit-transform: translate(calc(0% + var(--s,0%)));
+          transform: translate(calc(0% + var(--s,0%)));
+}
+
+.arrow-L:before,
+.arrow-R:after {
+  --s:-100%;
+}
+
+@-webkit-keyframes a5 {
+  80%, 100% {
+    -webkit-transform: translate(calc(100% + var(--s,0%)));
+            transform: translate(calc(100% + var(--s,0%)));
   }
 }
 
-@media screen and (max-width: 768px) {
-  #map {
-    margin-top: 20px;
-    height: 420px;
-    width: 420px;
-  }
-  .fLandings__form {
-    width: 420px;
+@keyframes a5 {
+  80%, 100% {
+    -webkit-transform: translate(calc(100% + var(--s,0%)));
+            transform: translate(calc(100% + var(--s,0%)));
   }
 }
 
-@media screen and (max-width: 425px) {
-  #map {
-    margin-top: 20px;
-    height: 370px;
-    width: 370px;
-  }
-  .fLandings__form {
-    width: 370px;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  #map {
-    margin-top: 20px;
-    height: 310px;
-    width: 310px;
-  }
-  .fLandings__form {
-    width: 310px;
-  }
+.pagination__number {
+  font-size: 30px;
+  font-weight: 600;
+  color: #085199;
+  margin: 5px;
 }
 
 .footer {
@@ -445,6 +514,7 @@ body {
 }
 
 .header__logo {
+  position: absolute;
   left: 10px;
   width: 80px;
   height: 40px;
@@ -649,6 +719,50 @@ body {
   width: 300px;
   height: 300px;
   background-image: url("../../assets/delete.gif");
+}
+
+@media screen and (max-width: 1024px) {
+  #map {
+    margin-top: 20px;
+    height: 500px;
+    width: 720px;
+  }
+  .fLandings__form {
+    width: 720px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #map {
+    margin-top: 20px;
+    height: 420px;
+    width: 420px;
+  }
+  .fLandings__form {
+    width: 420px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #map {
+    margin-top: 20px;
+    height: 370px;
+    width: 370px;
+  }
+  .fLandings__form {
+    width: 370px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #map {
+    margin-top: 20px;
+    height: 310px;
+    width: 310px;
+  }
+  .fLandings__form {
+    width: 310px;
+  }
 }
 
 .neas {

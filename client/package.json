@@ -9,7 +9,6 @@
     "normalize.css": "^8.0.1",
     "react-debounce-input": "^3.2.5",
     "react-hook-form": "^7.30.0",
-    "react-konva": "^18.1.0",
     "react-leaflet": "^4.0.0",
     "react-router-dom": "^6.3.0",
     "use-places-autocomplete": "^2.0.0",

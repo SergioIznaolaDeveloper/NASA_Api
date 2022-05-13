@@ -14,6 +14,7 @@ export default function App() {
   const [navActive, setNavActive] = useState("home"); // Estado botón de navegacion
   const [landingInputs, setLandingInputs] = useState([""]); // texto del input
   const [pagination, setPagination] = useState({first: 0, last: 10}) // Paginación
+  const [orderBy, setOrderBy] = useState(""); // Ordenar por
   
 // Funcion para cambiar el estado de la paginacion en PREV
   const prevPage = async (e) => {
@@ -56,11 +57,19 @@ export default function App() {
     landingInputs[0] === "from"
     ? setLandingInputs([...landingInputs,"to", e.target.value])
     : setLandingInputs(["to", e.target.value]);
-
+  
   };
+  // al volver a home borra los inputs de Landings
   const onClickToHome = () => {
     setLandingInputs([""]);
   };
+
+  // Funcion para cambiar el orderBy
+  const onChangeOrderBy = async (e) => {
+    e.preventDefault();
+    setOrderBy(e.target.value);
+  }
+  
   const infoPicture = {
   pic,
   getPic,
@@ -71,8 +80,10 @@ export default function App() {
     onClickToHome,
   };
   const landing = {
+    orderBy,
     pagination,
     landingInputs,
+    onChangeOrderBy,
     setLandingInputs,
     onChangeInputLMass,
     onChangeInputLClass,

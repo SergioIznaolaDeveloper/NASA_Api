@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { DebounceInput } from 'react-debounce-input';
 import { LandingContext } from "../../../../Context/LandingContext";
 
 
 export default function FilterLandings() {
-  const {landingInputs, onChangeInputLMass, onChangeInputLClass, onChangeInputLFrom, onChangeInputLTo} = useContext(LandingContext);
+  const {onChangeOrderBy, landingInputs, onChangeInputLMass, onChangeInputLClass, onChangeInputLFrom, onChangeInputLTo} = useContext(LandingContext);
   return (
   <section className="fLandings__form">
   <h1>FILTER LANDINGS BY PARAMS:</h1>
@@ -59,10 +59,10 @@ export default function FilterLandings() {
     </div>
   </form>
   <div className="fLandings__button-container">
-    <button className="fLandings__button">ORDER BY ID</button>
-    <button className="fLandings__button">ORDER BY NAME</button>
-    <button className="fLandings__button">ORDER BY CLASS</button>
-    <button className="fLandings__button">ORDER BY MASS</button>
+    <button  value="id" onClick={onChangeOrderBy} className="fLandings__button">ORDER BY ID</button>
+    <button  value="name"onClick={onChangeOrderBy} className="fLandings__button">ORDER BY NAME</button>
+    <button  value="class"onClick={onChangeOrderBy} className="fLandings__button">ORDER BY CLASS</button>
+    <button value="mass" onClick={onChangeOrderBy} className="fLandings__button">ORDER BY MASS</button>
   </div>
     <form action="" className="fLandings__form-form2">
     </form> 

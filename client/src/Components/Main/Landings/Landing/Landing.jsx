@@ -18,7 +18,7 @@ export default function Landing(props) {
           ? pagination.last + tenToTen.length === props.data.length 
             ?<><></></>
             :<><></></>
-          : <><div onClick={prevPage} className='arrow-L'></div><p className='pagination__number'>{pagination.first} -</p></>
+          : <><div onClick={prevPage} className='arrow-L'></div><p className='pagination__number'>{pagination.first}</p></>
           : <></>}
           { tenToTen.length === 10
           ? pagination.last < tenToTen.length
@@ -75,6 +75,9 @@ export default function Landing(props) {
                 <p className="landing__info">{item.reclong}</p>
               </div>
               <form action={`/api/astronomy/landings/delete/${item.id}`}method='POST'>
+                <button className='landing__button'>EDIT LANDING</button>
+                </form>
+                <form action={`/api/astronomy/landings/delete/${item.id}`}method='POST'>
                 <button className='landing__button'>DESTROY LANDING</button>
                 </form>
               </div>
