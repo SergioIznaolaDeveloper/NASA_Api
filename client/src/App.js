@@ -15,6 +15,7 @@ export default function App() {
   const [landingInputs, setLandingInputs] = useState([""]); // texto del input
   const [pagination, setPagination] = useState({first: 0, last: 10}) // Paginación
   const [orderBy, setOrderBy] = useState(""); // Ordenar por
+  const [create, setCreate] = useState(false)
   
 // Funcion para cambiar el estado de la paginacion en PREV
   const prevPage = async (e) => {
@@ -34,6 +35,14 @@ export default function App() {
     setPic({pic: data.url, type: data.media_type, title: data.title, date: data.date, explanation: data.explanation, copyright: data.copyright}); //setPic(data);
     } 
   }
+    // Cambia el estado de crear Landing
+    const onChangeInputLCreate = async (e) => {
+      e.preventDefault();
+      create === false
+      ? setCreate(true)
+      : setCreate(false)
+    };
+
   // Añadir busqueda por mass
   const onChangeInputLMass = async (e) => {
     e.preventDefault();
@@ -74,12 +83,16 @@ export default function App() {
   pic,
   getPic,
   };
+
   const nav = {
     navActive, 
     setNavActive,
     onClickToHome,
   };
+
   const landing = {
+    create,
+    setCreate,
     orderBy,
     pagination,
     landingInputs,
@@ -89,6 +102,7 @@ export default function App() {
     onChangeInputLClass,
     onChangeInputLFrom,
     onChangeInputLTo,
+    onChangeInputLCreate,
     prevPage,
     nextPage,
   }

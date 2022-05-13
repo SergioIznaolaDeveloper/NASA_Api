@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import Landing from './Landing'
 import FilterLandings from './FilterLandings';
+import FormC from './FormC';
 import Leaflet from '../../../hooks/leaflet'
 import FetchLandings from '../../../hooks/fetchLandings'
 import { LandingContext } from "../../../Context/LandingContext";
@@ -21,10 +22,6 @@ return (
   <div className="landings">
   <Leaflet data={list}/>
   <FilterLandings/>
-  <form className='formPost'>
-    <h1>Create new landing</h1>
-    
-  </form>
   <Landing data={list} />
 </div>
 )

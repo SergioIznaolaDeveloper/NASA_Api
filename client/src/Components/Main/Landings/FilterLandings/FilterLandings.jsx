@@ -1,15 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
+import FormC from '../FormC';
 import { DebounceInput } from 'react-debounce-input';
 import { LandingContext } from "../../../../Context/LandingContext";
 
-
 export default function FilterLandings() {
-  const {onChangeOrderBy, landingInputs, onChangeInputLMass, onChangeInputLClass, onChangeInputLFrom, onChangeInputLTo} = useContext(LandingContext);
+  const {onChangeOrderBy, landingInputs, onChangeInputLMass, onChangeInputLClass, onChangeInputLFrom, onChangeInputLTo, create, setCreate, onChangeInputLCreate} = useContext(LandingContext);
   return (
   <section className="fLandings__form">
   <div className="fLandings__head">
     <h1>FILTER LANDINGS BY PARAMS:</h1>
-    <button value="create"  className="fLandings__button">CREATE NEW LANDING</button>
+    <button onClick={onChangeInputLCreate} value="create"  className="fLandings__button-create">CREATE NEW LANDING</button>
   </div>
   <form className="fLandings__form-form1">
     <div className="fLandings__form-two">
@@ -67,6 +67,11 @@ export default function FilterLandings() {
     <button  value="class"onClick={onChangeOrderBy} className="fLandings__button">ORDER BY CLASS</button>
     <button value="mass" onClick={onChangeOrderBy} className="fLandings__button">ORDER BY MASS</button>
   </div>
+  {create===true
+  ?<FormC/>
+  :<></>
+  }
+  
   </section>
   )
 }
