@@ -84,10 +84,11 @@ body {
 .fLandings__form {
   border: solid 3px white;
   border-radius: 5px;
-  background-image: url("../../assets/fondo_filter.jpg");
+  background-image: url("../../assets/fondo_filter_2.jpg");
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   -webkit-box-shadow: 0px 0px 5px #00000086;
           box-shadow: 0px 0px 5px #00000086;
   color: white;
@@ -122,6 +123,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 10px;
 }
 
 .fLandings__form-two {
@@ -138,16 +140,46 @@ body {
           justify-content: center;
 }
 
+.fLandings__form .fLandings__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 83%;
+}
+
+.fLandings__form .fLandings__head > h1 {
+  color: #e8e8e8;
+  border: #e8122b solid 2px;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
 .fLandings__form .fLandings__label {
-  font-size: 20px;
+  border-radius: 5px;
+  font-size: 17px;
   margin-bottom: 5px;
+  color: #e8e8e8;
+  font-weight: 600;
 }
 
 .fLandings__form .fLandings__input {
-  border-radius: 2px;
+  -webkit-box-shadow: 0px 0px 3px inset #000000, 0px 0px 10px #000000a2;
+          box-shadow: 0px 0px 3px inset #000000, 0px 0px 10px #000000a2;
   border: transparent;
   height: 20px;
   width: 200px;
+  border: white solid 2px;
+  border-radius: 5px;
 }
 
 .fLandings__form .fLandings__button-container {
@@ -164,19 +196,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .fLandings__form .fLandings__button {
   font-family: 'Strait', sans-serif;
   font-size: 15px;
   font-weight: 800;
-  margin: 5px;
-  border-radius: 5px;
   border: transparent;
-  height: 25px;
-  width: 205px;
-  margin: 10px;
+  min-height: 25px;
+  border: white solid 2px;
+  border-radius: 5px;
+  width: 208px;
+  margin: 5px 10px;
 }
 
 .fLandings__form .fLandings__button:hover {
@@ -388,7 +420,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 20px;
+  margin: 0px;
 }
 
 .arrow-L,
@@ -572,75 +604,6 @@ body {
   color: #e8e8e8;
 }
 
-.form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  border: solid 1px #edf6f9;
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.452);
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.452);
-  border-radius: 5px;
-  min-width: 300px;
-  background-color: #006d77;
-  margin: 10px;
-  font-family: "Poppins", sans-serif;
-}
-
-.form__title {
-  color: #edf6f9;
-  font-weight: 600;
-  width: 90%;
-  margin: 10px;
-  padding: 10px;
-  border: solid 1px #edf6f9;
-  background-color: #006d77;
-  border-radius: 5px;
-}
-
-.form__label {
-  width: 90%;
-  font-weight: 600;
-  color: #edf6f9;
-  border: solid 1px #006d77;
-  border-radius: 5px;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  margin-left: 20px;
-  height: 20px;
-}
-
-.form__input {
-  font-weight: 600;
-  margin: 5px 0px;
-  border: solid 1px #006d77;
-  border-radius: 5px;
-  width: 90%;
-}
-
-.form__button {
-  font-weight: 600;
-  padding: 5px 20px;
-  margin: 10px 0px;
-  border-radius: 5px;
-  background-color: #ed6a5a;
-  border: solid 1px #edf6f9;
-  color: #edf6f9;
-}
-
 .home {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -728,7 +691,14 @@ body {
     width: 720px;
   }
   .fLandings__form {
-    width: 720px;
+    width: 600px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0px 60px;
   }
 }
 
@@ -738,8 +708,21 @@ body {
     height: 420px;
     width: 420px;
   }
+  .fLandings__head {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .fLandings__form {
-    width: 420px;
+    width: 460px;
+    padding: 0px 0px;
   }
 }
 

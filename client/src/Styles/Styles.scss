@@ -4,12 +4,10 @@
 @import './Components/landing';
 @import './Components/footer';
 @import './Components/header';
-@import './Components/from';
 @import './Components/home';
 @import './Components/deleted';
 
 @import url('https://fonts.googleapis.com/css2?family=Strait&display=swap');
-
 
 @media screen and (max-width: 1024px) {
   #map {
@@ -18,7 +16,10 @@
     width: 720px;
   }
   .fLandings__form {
-    width: 720px;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 60px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -27,8 +28,14 @@
     height: 420px;
     width: 420px;
   }
-  .fLandings__form {
-    width: 420px;
+  .fLandings__head {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .fLandings__form{
+    width: 460px;
+    padding: 0px 0px;
   }
 }
 @media screen and (max-width: 425px) {
@@ -49,14 +56,14 @@
   }
   .fLandings__form {
     width: 310px;
+
   }
 }
 
-.neas{
+.neas {
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-

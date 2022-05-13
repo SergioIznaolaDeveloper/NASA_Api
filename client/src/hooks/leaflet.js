@@ -58,7 +58,7 @@ const getIconVar = () => {
 }
 const getIconSun = () => {
   return L.icon({
-    iconUrl: require("../Static/Icons/sunny.png"),
+    iconUrl: require("../Static/Icons/sun.gif"),
     iconSize: [60],
   });
 }

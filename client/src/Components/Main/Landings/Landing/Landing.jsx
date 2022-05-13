@@ -19,12 +19,12 @@ export default function Landing(props) {
             ?<><></></>
             :<><></></>
           : <><div onClick={prevPage} className='arrow-L'></div><p className='pagination__number'>{pagination.first}</p></>
-          : <></>}
-          { tenToTen.length === 10
-          ? pagination.last < tenToTen.length
+        : <></>}
+        { tenToTen.length === 10
+        ? pagination.last < tenToTen.length
           ? <><></></>
           : <><p className='pagination__number'>{pagination.last}</p><div onClick={nextPage} className='arrow-R'></div></>
-          : <><></></>}
+        : <><></></>}
       </div>
     {tenToTen.length ? (
       <div className="landings__container">

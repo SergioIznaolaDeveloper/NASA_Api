@@ -7,7 +7,10 @@ export default function FilterLandings() {
   const {onChangeOrderBy, landingInputs, onChangeInputLMass, onChangeInputLClass, onChangeInputLFrom, onChangeInputLTo} = useContext(LandingContext);
   return (
   <section className="fLandings__form">
-  <h1>FILTER LANDINGS BY PARAMS:</h1>
+  <div className="fLandings__head">
+    <h1>FILTER LANDINGS BY PARAMS:</h1>
+    <button value="create"  className="fLandings__button">CREATE NEW LANDING</button>
+  </div>
   <form className="fLandings__form-form1">
     <div className="fLandings__form-two">
     <label className="fLandings__label" htmlFor="class">Landings CLASS:</label>
@@ -64,8 +67,6 @@ export default function FilterLandings() {
     <button  value="class"onClick={onChangeOrderBy} className="fLandings__button">ORDER BY CLASS</button>
     <button value="mass" onClick={onChangeOrderBy} className="fLandings__button">ORDER BY MASS</button>
   </div>
-    <form action="" className="fLandings__form-form2">
-    </form> 
   </section>
   )
 }
