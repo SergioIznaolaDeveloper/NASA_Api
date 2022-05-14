@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { PicContext } from "./Context/PicContext";
 import { NavigatorContext } from './Context/NavigatorContext';
 import { LandingContext } from './Context/LandingContext';
+import { Post } from './Context/Post';
 import Main from "./Components/Main/Main";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -16,6 +17,7 @@ export default function App() {
   const [pagination, setPagination] = useState({first: 0, last: 10}) // Paginación
   const [orderBy, setOrderBy] = useState(""); // Ordenar por
   const [create, setCreate] = useState(false)
+  const [postCreate, setPostCreate] = useState([])  
   
 // Funcion para cambiar el estado de la paginacion en PREV
   const prevPage = async (e) => {
@@ -78,12 +80,18 @@ export default function App() {
     e.preventDefault();
     setOrderBy(e.target.value);
   }
-  
+  // Funcion para registrar el post de create
+  const onClickCreate = async (data) => {
+    setPostCreate(data);
+  }
   const infoPicture = {
   pic,
   getPic,
   };
-
+  const post = {
+    postCreate,
+    setPostCreate,
+  }
   const nav = {
     navActive, 
     setNavActive,
@@ -94,6 +102,7 @@ export default function App() {
     orderBy,
     pagination,
     landingInputs,
+    onClickCreate,
     setCreate,
     onChangeOrderBy,
     setLandingInputs,
@@ -115,7 +124,9 @@ export default function App() {
       <Header />
       <LandingContext.Provider value={landing}>
       <PicContext.Provider value={infoPicture}>
+      <Post.Provider value={post}>
       <Main />
+      </Post.Provider>
       </PicContext.Provider>
       </LandingContext.Provider>
       </NavigatorContext.Provider>

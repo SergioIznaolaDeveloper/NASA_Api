@@ -1,15 +1,19 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { LandingContext } from "../../../../Context/LandingContext";
-
+import FormEdit from './FormEdit/FormEdit';
+const urlDelete = process.env.REACT_APP_URL_DELETE
 
 export default function Landing(props) {
   const {nextPage, prevPage, pagination} = useContext(LandingContext);
   const [tenToTen, setTenToTen] = useState([])
-  
+  const [edit, setEdit] = useState(false)
   useEffect(() => {
     setTenToTen(props.data.slice(pagination.first, pagination.last))
   } , [props])
-
+  const buttonEdit = async (event) => {
+    event.preventDefault()
+    setEdit(true)
+  }
   return ( 
     <section className='pag-land__container'>{/* Check to see if any items are found*/}
       <div className='pagination__container'>
@@ -45,7 +49,9 @@ export default function Landing(props) {
                     : <div className="landing__img"></div>}
                 </div>
               <div className="landing__container-info">
-              <div className='data-data'>
+              {edit === false ? 
+              ( <>
+                <div className='data-data'>
                 <p className="landing__info-t">Name:</p>
                 <p className="landing__info">{item.name}</p>
               </div>
@@ -53,7 +59,6 @@ export default function Landing(props) {
                 <p className="landing__info-t">Mass: </p>
                 <p className="landing__info">{item.mass}</p>
               </div>
-              
               <div className='data-data'>
                 <p className="landing__info-t">Id:</p>
                 <p className="landing__info">{item.id}</p>
@@ -74,12 +79,15 @@ export default function Landing(props) {
                 <p className="landing__info-t">Longitude: </p>
                 <p className="landing__info">{item.reclong}</p>
               </div>
-              <form action={`/api/astronomy/landings/delete/${item.id}`}method='POST'>
-                <button className='landing__button'>EDIT LANDING</button>
+                <form action="">
+                <button className='landing__button' onClick={buttonEdit}>EDIT LANDING</button>
                 </form>
-                <form action={`/api/astronomy/landings/delete/${item.id}`}method='POST'>
+                <form action={`${urlDelete}/${item.id}`}method='POST'>
                 <button className='landing__button'>DESTROY LANDING</button>
-                </form>
+                </form></>
+              ) : (
+                <FormEdit data={item}/>
+              )}
               </div>
             </div>
           );

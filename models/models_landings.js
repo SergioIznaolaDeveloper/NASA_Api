@@ -1,18 +1,40 @@
 const mongoose = require('mongoose');
 
 const itemSchema = {
-    name: String,
-    id: String,
-    nametype: String,
-    recclass: String,
-    mass: Number,
-    fall: String,
-    year: String,
-    reclat: String,
-    reclong: String,
+    name: {
+        type: String
+    },
+    id: {
+        type: String
+    },
+    nametype:{
+        type: String
+    },
+    recclass: {
+        type: String
+    },
+    mass: {
+        type: Number
+    },
+    fall: {
+        type: String
+    },
+    year: {
+        type: String
+    },
+    reclat: {
+        type: String
+    },
+    reclong: {
+        type: String
+    },
     geolocation: {
-        latitude: String,
-        longitude: String
+        latitude: {
+            type: String
+        },
+        longitude: {
+            type: String
+        },
     }
 }
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import FormE from "./FormE";
+import FormEdit from "./FormEdit";
 
-describe("FormE", () => {
+describe("FormEdit", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<FormE />);
+    const wrapper = shallow(<FormEdit />);
     expect(wrapper).toMatchSnapshot();
   });
 });

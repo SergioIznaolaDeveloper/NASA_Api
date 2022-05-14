@@ -17,7 +17,7 @@ router.get(
   "/api/astronomy/landings/class/:recclass?/:order?",
   landings.getLandingClass
 );
-router.post("/api/astronomy/landings/create", landings.createNewLanding);
+router.post("/api/astronomy/landings/create/:name/:id/:recclass/:mass/:year/:reclat/:reclong", landings.createNewLanding);
 router.put("/api/astronomy/landings/edit/:id", landings.editLanding);
 router.post("/api/astronomy/landings/delete/:id", landings.deleteLanding);
 

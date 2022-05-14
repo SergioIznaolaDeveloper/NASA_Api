@@ -1,189 +1,223 @@
+.recent_landing,
 .landing {
-    width: 350px;
-    box-shadow: 0px 0px 5px #00000086;
-    background-image: url('../../assets/card_background.jpg');
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    margin: 5px;
-    border: #085199 solid 3px;
-    &__container-info {
-      margin: 10px;
-      display: flex;
-      flex-flow: column;
-      font-weight: 600;
-    }
-    &__info-t {
-      color: #085199;
-      margin: 3px;
-    }
-    &__info {
-      color: #e8122b;
-      margin: 3px;
-    }
-    &__button {
-      padding: 2px;
-      margin-top: 5px;
-      border-radius: 15px;
-      border: transparent;
-      color: white;
-      font-family: 'Strait', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.425);
-      background-color: #e8122b;
-      width: 200px;
-      transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-    &__button:hover {
-      background-color: #085199;
-      color: white;
-    }
-    &__imgH {
-      filter: drop-shadow(0px 0px 5px #222);
-      margin-left: 10px;
-      background-image: url('../../Static/Icons/H6.png');
-      background-position: center;
-      background-size: cover;
-      width: 100px;
-      height: 100px;
-    }
-    &__imgL {
-      filter: drop-shadow(0px 0px 5px #222);
-      margin-left: 10px;
-      background-image: url('../../Static/Icons/L6.png');
-      background-position: center;
-      background-size: cover;
-      width: 100px;
-      height: 100px;
-    }
-  
-    &__imgD {
-      filter: drop-shadow(0px 0px 5px #222);
-      margin-left: 10px;
-      background-image: url('../../Static/Icons/diogenite.png');
-      background-position: center;
-      background-size: cover;
-      width: 100px;
-      height: 100px;
-    }
-    &__imgVar {
-      filter: drop-shadow(0px 0px 5px #222);
-      margin-left: 10px;
-      background-image: url('../../Static/Icons/undefined.png');
-      background-position: center;
-      background-size: cover;
-      width: 100px;
-      height: 100px;
-    }
-  }
-  
-  .data-data {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-  }
-  
-  .id-img {
-    display: flex;
-    justify-content: flex-start;
-    height: 100%;
-    align-items: center;
-    flex-flow: column;
-  }
-  .landing__id {
-    align-self: flex-start;
-    color: #085199;
-    font-size: 30px;
+  width: 350px;
+  box-shadow: 0px 0px 5px #00000086;
+  background-image: url('../../assets/card_background.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 5px;
+  border: #085199 solid 3px;
+  &__container-info {
     margin: 10px;
-    margin-bottom: 10px;
+    display: flex;
+    flex-flow: column;
     font-weight: 600;
   }
-  .landing__img {
+  &__info-t {
+    color: #085199;
+    margin: 3px;
+  }
+  &__info {
+    color: #e8122b;
+    margin: 3px;
+  }
+  &__button {
+    padding: 2px;
+    margin-top: 10px;
+    border-radius: 15px;
+    border: transparent;
+    color: white;
+    font-family: 'Strait', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.425);
+    background-color: #e8122b;
+    width: 200px;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  &__button:hover {
+    background-color: #085199;
+    color: white;
+  }
+  &__imgH {
     filter: drop-shadow(0px 0px 5px #222);
     margin-left: 10px;
-    background-image: url('../../Static/Icons/asteroide.png');
+    background-image: url('../../Static/Icons/H6.png');
     background-position: center;
     background-size: cover;
     width: 100px;
     height: 100px;
-    margin-bottom: 10px;
   }
-
-.charging {
-    width: 200px;
-    height: 200px;
-    margin-top: 20px;
-    background-image: url('../../assets/loading.gif');
+  &__imgL {
+    filter: drop-shadow(0px 0px 5px #222);
+    margin-left: 10px;
+    background-image: url('../../Static/Icons/L6.png');
     background-position: center;
     background-size: cover;
+    width: 100px;
+    height: 100px;
   }
-  .pag-land__container{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+
+  &__imgD {
+    filter: drop-shadow(0px 0px 5px #222);
+    margin-left: 10px;
+    background-image: url('../../Static/Icons/diogenite.png');
+    background-position: center;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
   }
-  .pagination__container {
-    display: flex;
-    flex-flow: row;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0px;
+  &__imgVar {
+    filter: drop-shadow(0px 0px 5px #222);
+    margin-left: 10px;
+    background-image: url('../../Static/Icons/undefined.png');
+    background-position: center;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
   }
-  .arrow-L,
-  .arrow-R {
-    filter: drop-shadow(-3px 0px 1px rgba(34, 34, 34, 0.498));
-    cursor: pointer;
-    width:30px;
-    height:30px;
-    display: grid;
-    overflow: hidden;
-  }
-  .arrow-L {
+}
+.recent_landing {
+  margin-bottom: 20px;
+}
+.data-data {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.id-img {
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  align-items: center;
+  flex-flow: column;
+}
+.landing__id {
+  align-self: flex-start;
+  color: #085199;
+  font-size: 30px;
+  margin: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.landing__img {
+  filter: drop-shadow(0px 0px 5px #222);
+  margin-left: 10px;
+  background-image: url('../../Static/Icons/asteroide.png');
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.charging {
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  background-image: url('../../assets/loading.gif');
+  background-position: center;
+  background-size: cover;
+}
+.pag-land__container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.pagination__container {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0px;
+}
+.arrow-L,
+.arrow-R {
+  filter: drop-shadow(-3px 0px 1px rgba(34, 34, 34, 0.498));
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  overflow: hidden;
+}
+.arrow-L {
   transform: rotate(180deg);
+}
+.arrow-R:before,
+.arrow-R:after {
+  content: '';
+  grid-area: 1/1;
+  background-image: url('../../assets/fondo_filter.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip-path: polygon(
+    0 10px,
+    calc(100% - 15px) 10px,
+    calc(100% - 15px) 0,
+    100% 50%,
+    calc(100% - 15px) 100%,
+    calc(100% - 15px) calc(100% - 10px),
+    0 calc(100% - 10px)
+  );
+  animation: a5 1s infinite;
+  transform: translate(calc(0% + var(--s, 0%)));
+}
+.arrow-L:before,
+.arrow-L:after {
+  content: '';
+  grid-area: 1/1;
+  background-image: url('../../assets/fondo_filter.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip-path: polygon(
+    0 10px,
+    calc(100% - 15px) 10px,
+    calc(100% - 15px) 0,
+    100% 50%,
+    calc(100% - 15px) 100%,
+    calc(100% - 15px) calc(100% - 10px),
+    0 calc(100% - 10px)
+  );
+  animation: a5 1s infinite;
+  transform: translate(calc(0% + var(--s, 0%)));
+}
+.arrow-L:before,
+.arrow-R:after {
+  --s: -100%;
+}
+
+@keyframes a5 {
+  80%,
+  100% {
+    transform: translate(calc(100% + var(--s, 0%)));
   }
-  .arrow-R:before,
-  .arrow-R:after {
-    content: "";
-    grid-area: 1/1;
-    background-image: url('../../assets/fondo_filter.jpg');
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    clip-path: polygon(0 10px,calc(100% - 15px) 10px,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,calc(100% - 15px) calc(100% - 10px),0 calc(100% - 10px));
-    animation: a5 1s infinite;
-    transform: translate(calc(0% + var(--s,0%)));
-  }
-  .arrow-L:before,
-  .arrow-L:after {
-    content: "";
-    grid-area: 1/1;
-    background-image: url('../../assets/fondo_filter.jpg');
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    clip-path: polygon(0 10px,calc(100% - 15px) 10px,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,calc(100% - 15px) calc(100% - 10px),0 calc(100% - 10px));
-    animation: a5 1s infinite;
-    transform: translate(calc(0% + var(--s,0%)));
-  }
-  .arrow-L:before,
-  .arrow-R:after {
-    --s:-100%;
-  }
-  
-  @keyframes a5 {
-    80%,100%{transform: translate(calc(100% + var(--s,0%)))}
-  }
-  
-  .pagination__number{
+}
+
+.pagination__number {
   font-size: 30px;
   font-weight: 600;
   color: #085199;
   margin: 5px;
-  }
-  
+}
+.data-data-e{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.edit_input{
+  box-shadow: 0px 0px 3px inset #000000, 0px 0px 1px #000000a2;
+  border: transparent;
+  height: 20px;
+  width: 130px;
+  border-radius: 5px;
+}

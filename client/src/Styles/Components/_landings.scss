@@ -144,9 +144,18 @@
     padding: 2px 5px;
     font-size: 35px;
     border-radius: 5px;
-    align-self: flex-start;
+    align-self: center;
     margin-left: 10px;
   }
+}
+.created__title{
+  color: #e8e8e8;
+  border: #e8122b solid 2px;
+  padding: 2px 5px;
+  font-size: 25px;
+  border-radius: 5px;
+  align-self: center;
+  margin-left: 10px;
 }
 .fLandings__form-section{
   display: flex;

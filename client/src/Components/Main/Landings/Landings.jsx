@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import Landing from './Landing'
 import FilterLandings from './FilterLandings';
-import FormC from './FormC';
 import Leaflet from '../../../hooks/leaflet'
 import FetchLandings from '../../../hooks/fetchLandings'
 import { LandingContext } from "../../../Context/LandingContext";
