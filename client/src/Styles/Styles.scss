@@ -21,6 +21,10 @@
     align-items: center;
     padding: 0px 60px;
   }
+  .nav__button,
+  .nav__button-active {
+    width: 150px;
+  }
 }
 @media screen and (max-width: 768px) {
   #map {
@@ -33,33 +37,58 @@
     justify-content: center;
     align-items: center;
   }
-  .fLandings__form{
-    width: 460px;
+  .fLandings__form {
+    width: 420px;
     padding: 0px 0px;
+  }
+  .header {
+    justify-content: flex-end;
+  }
+  .nav__button,
+  .nav__button-active {
+    width: 80px;
   }
 }
 @media screen and (max-width: 425px) {
   #map {
-    margin-top: 20px;
+    margin-top: 100px;
     height: 370px;
     width: 370px;
   }
   .fLandings__form {
     width: 370px;
   }
+  .nav__button,
+  .nav__button-active {
+    width: 80vw;
+  }
+  .header {
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  .header__logo {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0px;
+  }
+  .home {
+    margin-top: 180px;
+  }
 }
 @media screen and (max-width: 375px) {
   #map {
-    margin-top: 20px;
     height: 310px;
     width: 310px;
   }
   .fLandings__form {
     width: 310px;
-
+  }
+  .landing {
+    width: 310px;
+    flex-flow: column;
   }
 }
-
 .neas {
   margin-top: 50px;
   display: flex;

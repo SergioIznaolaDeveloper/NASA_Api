@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { PicContext } from "./Context/PicContext";
 import { NavigatorContext } from './Context/NavigatorContext';
 import { LandingContext } from './Context/LandingContext';
+import { Post } from './Context/Post';
 import Main from "./Components/Main/Main";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -16,6 +17,8 @@ export default function App() {
   const [pagination, setPagination] = useState({first: 0, last: 10}) // Paginación
   const [orderBy, setOrderBy] = useState(""); // Ordenar por
   const [create, setCreate] = useState(false)
+  const [postCreate, setPostCreate] = useState([])  
+  const [putEdit, setPutEdit] = useState([])  
   
 // Funcion para cambiar el estado de la paginacion en PREV
   const prevPage = async (e) => {
@@ -47,11 +50,13 @@ export default function App() {
   const onChangeInputLMass = async (e) => {
     e.preventDefault();
     setLandingInputs(["mass", e.target.value]);
+    setPagination({first: 0, last: 10})
   };
   // Añadir busqueda por class
   const onChangeInputLClass = async (e) => {
     e.preventDefault();
     setLandingInputs(["class", e.target.value]);
+    setPagination({first: 0, last: 10})
   };
   // Añadir busqueda from ...
   const onChangeInputLFrom = async (e) => {
@@ -59,6 +64,7 @@ export default function App() {
     landingInputs[0] === "to"
     ? setLandingInputs([...landingInputs,"from", e.target.value])
     : setLandingInputs(["from", e.target.value]);
+    setPagination({first: 0, last: 10})
   };
    // Añadir busqueda to ...
   const onChangeInputLTo = async (e) => {
@@ -66,6 +72,7 @@ export default function App() {
     landingInputs[0] === "from"
     ? setLandingInputs([...landingInputs,"to", e.target.value])
     : setLandingInputs(["to", e.target.value]);
+    setPagination({first: 0, last: 10})
   
   };
   // al volver a home borra los inputs de Landings
@@ -78,12 +85,20 @@ export default function App() {
     e.preventDefault();
     setOrderBy(e.target.value);
   }
-  
+  // Funcion para registrar el post de create
+  const onClickCreate = async (data) => {
+    setPostCreate(data);
+  }
   const infoPicture = {
   pic,
   getPic,
   };
-
+  const post = {
+    putEdit, 
+    postCreate,
+    setPostCreate,
+    setPutEdit,
+  }
   const nav = {
     navActive, 
     setNavActive,
@@ -94,6 +109,7 @@ export default function App() {
     orderBy,
     pagination,
     landingInputs,
+    onClickCreate,
     setCreate,
     onChangeOrderBy,
     setLandingInputs,
@@ -115,7 +131,9 @@ export default function App() {
       <Header />
       <LandingContext.Provider value={landing}>
       <PicContext.Provider value={infoPicture}>
+      <Post.Provider value={post}>
       <Main />
+      </Post.Provider>
       </PicContext.Provider>
       </LandingContext.Provider>
       </NavigatorContext.Provider>

@@ -1,11 +1,17 @@
 const Landing = require("../models/models_landings");
-// const toNumber = async() => {
-//     await Landing.updateMany(
+// const toNumber = async () => {     
+// await Landing.updateMany(
 //          { 'mass' : { $type: 2 }},
 //          [{ $set: { 'mass': { $toDouble: '$mass' } } }]
 //         )
 // }
 // toNumber()
+const express = require('express')
+const app = express()
+const bodyParser = require('body-parser')
+// parse various different custom JSON types as JSON
+app.use(bodyParser.json({ type: 'application/*+json' }))
+
 const getLandingsMass = async (req, res) => {
   let data;
   try {
@@ -217,9 +223,16 @@ const getLandingsQuery = async (req, res) => {
 };
 
 const createNewLanding = async (req, res) => {
-  console.log(req.body);
   try {
-    const lan = req.body;
+    const lan = {
+      name: req.params.name,
+      id: req.params.id,
+      recclass: req.params.recclass,
+      mass: req.params.mass,
+      year: req.params.year,
+      reclat: req.params.reclat,
+      reclong: req.params.reclong,
+    }
     await Landing.create(lan);
     res.status(201).json({ message: "landing creada" });
   } catch (err) {
@@ -229,7 +242,15 @@ const createNewLanding = async (req, res) => {
 const editLanding = async (req, res) => {
   try {
     let query = { id: req.params.id };
-    let update = req.body;
+    let update = {
+      name: req.params.name,
+      id: req.params.id,
+      recclass: req.params.recclass,
+      mass: req.params.mass,
+      year: req.params.year,
+      reclat: req.params.reclat,
+      reclong: req.params.reclong,
+    };
     const result = await Landing.findOneAndUpdate(query, update, {
       new: true,
       runValidators: true,
