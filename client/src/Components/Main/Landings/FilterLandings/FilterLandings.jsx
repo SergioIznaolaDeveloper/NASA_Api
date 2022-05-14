@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import FormC from '../FormC';
 import { DebounceInput } from 'react-debounce-input';
 import { LandingContext } from "../../../../Context/LandingContext";
 
-export default function FilterLandings() {
-  const {onChangeOrderBy, landingInputs, onChangeInputLMass, onChangeInputLClass, onChangeInputLFrom, onChangeInputLTo, create, setCreate, onChangeInputLCreate} = useContext(LandingContext);
+export default function FilterLandings(props) {
+  const {onChangeOrderBy, landingInputs, onChangeInputLMass, onChangeInputLClass, onChangeInputLFrom, onChangeInputLTo, create, onChangeInputLCreate} = useContext(LandingContext);
   return (
   <section className="fLandings__form">
   <div className="fLandings__head">
@@ -62,16 +62,25 @@ export default function FilterLandings() {
     </div>
   </form>
   <div className="fLandings__button-container">
-    <button  value="id" onClick={onChangeOrderBy} className="fLandings__button">ORDER BY ID</button>
-    <button  value="name"onClick={onChangeOrderBy} className="fLandings__button">ORDER BY NAME</button>
-    <button  value="class"onClick={onChangeOrderBy} className="fLandings__button">ORDER BY CLASS</button>
-    <button value="mass" onClick={onChangeOrderBy} className="fLandings__button">ORDER BY MASS</button>
+    {props.data === "id"
+    ? <button  value="id" className="fLandings__button-active">ORDER BY ID</button>
+    : <button  value="id" onClick={onChangeOrderBy} className="fLandings__button">ORDER BY ID</button>}
+    {props.data === "name"
+    ? <button  value="name"onClick={onChangeOrderBy} className="fLandings__button-active">ORDER BY NAME</button>
+    : <button  value="name" onClick={onChangeOrderBy} className="fLandings__button">ORDER BY NAME</button>}
+    {props.data === "class"
+    ? <button  value="class" onClick={onChangeOrderBy} className="fLandings__button-active">ORDER BY CLASS</button>
+    :<button  value="class"onClick={onChangeOrderBy} className="fLandings__button">ORDER BY CLASS</button>}
+    {props.data === "mass"
+    ? <button value="mass" onClick={onChangeOrderBy} className="fLandings__button-active">ORDER BY MASS</button>
+    : <button value="mass" onClick={onChangeOrderBy} className="fLandings__button">ORDER BY MASS</button>
+    }
+    
   </div>
   {create===true
   ?<FormC/>
   :<></>
   }
-  
   </section>
   )
 }

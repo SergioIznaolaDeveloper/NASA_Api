@@ -89,13 +89,12 @@ export default function App() {
     setNavActive,
     onClickToHome,
   };
-
   const landing = {
     create,
-    setCreate,
     orderBy,
     pagination,
     landingInputs,
+    setCreate,
     onChangeOrderBy,
     setLandingInputs,
     onChangeInputLMass,

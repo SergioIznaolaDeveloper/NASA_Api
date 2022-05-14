@@ -21,7 +21,7 @@ export default function Landings() {
 return (
   <div className="landings">
   <Leaflet data={list}/>
-  <FilterLandings/>
+  <FilterLandings data={orderBy}/>
   <Landing data={list} />
 </div>
 )
