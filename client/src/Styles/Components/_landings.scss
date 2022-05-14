@@ -1,0 +1,202 @@
+@import '../Utils/variables.scss';
+@import '../Utils/mixings.scss';
+
+.landings {
+  margin: 80px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__container {
+    width: 98vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+
+#map {
+  height: 500px;
+  width: 1080px;
+  border: solid 3px white;
+  background-color: #000f1f;
+  border-radius: 5px;
+  background-image: url('../../assets/galaxy.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  box-shadow: 0px 0px 15px #000000;
+}
+
+
+
+.fLandings__form {
+  border: solid 3px white;
+  border-radius: 5px;
+  background-image: url('../../assets/fondo_filter_2.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  box-shadow: 0px 0px 5px #00000086;
+  color: white;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 1080px;
+
+  &-form1 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  margin: 10px;
+  &-two {
+    margin: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+}
+.fLandings__head{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 83%;
+  & > h1 {
+    color: #e8e8e8;
+    border: #e8122b solid 2px;
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+}
+.fLandings__label {
+  border-radius: 5px;
+  font-size: 17px;
+  margin-bottom: 5px;
+  color: #e8e8e8; 
+  font-weight: 600;
+}
+.fLandings__input {
+  box-shadow: 0px 0px 3px inset #000000, 0px 0px 10px #000000a2;
+  border: transparent;
+  height: 20px;
+  width: 200px;
+  border: white solid 2px;
+  border-radius: 5px;
+}
+.fLandings__button-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.fLandings__button {
+  font-family: 'Strait', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  border: transparent;
+  min-height: 25px;
+  border: #e8122b solid 2px;
+  border-radius: 5px;
+  width: 208px;
+  margin: 5px 10px;
+}
+.fLandings__button:hover {
+  background-color: #e8122b;
+  color: white;
+}
+.fLandings__button-active{
+  font-family: 'Strait', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  border: transparent;
+  min-height: 25px;
+  border: #e8122b solid 2px;
+  border-radius: 5px;
+  width: 208px;
+  margin: 5px 10px;
+  background-color: #e8122b;
+  color: white;
+}
+
+.formPost{
+  border-radius: 5px;                                                                         
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white; 
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  & > h1 {
+    color: #e8e8e8;
+    border: #e8122b solid 2px;
+    padding: 2px 5px;
+    font-size: 35px;
+    border-radius: 5px;
+    align-self: flex-start;
+    margin-left: 10px;
+  }
+}
+.fLandings__form-section{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.formPost__button{
+  font-family: 'Strait', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  border: transparent;
+  min-height: 25px;
+  border: white solid 2px;
+  border-radius: 5px;
+  width: 208px;
+  margin: 28px 10px 5px;
+  background-color: #e8122b;
+  color: white;
+}
+
+.formPost__button:hover {
+  background-color: white;
+  color: #e8122b;
+}
+
+.fLandings__button-create {
+  font-family: 'Strait', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  border: transparent;
+  min-height: 25px;
+  border: white solid 2px;
+  border-radius: 5px;
+  width: 208px;
+  margin: 5px 10px;
+  background-color: #e8122b;
+  color: white;
+}
+.fLandings__button-create:hover {
+  background-color: white;
+  color: #e8122b;
+}
+
+.form__errors{
+font-size: 25px;
+color: #e8122b;
+border-radius: 15px;
+width: 100%;
+text-align: center;
+font-weight: 600;
+}

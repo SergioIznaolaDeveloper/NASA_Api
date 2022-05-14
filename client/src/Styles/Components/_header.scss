@@ -1,0 +1,59 @@
+.header{
+  z-index: 1;
+  width: 100vw;
+  top : 0;
+  position: absolute;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  background-image: url('../../assets/fondo_filter.jpg');
+  &__logo{
+    position: absolute;
+    left: 10px;
+    width: 80px;
+    height: 40px;
+    background-image: url('../../Static/Logos/nasa2.png');
+    background-position: center;
+    background-size: cover;
+    margin-left: 10px;
+    justify-self: flex-start;
+  }
+}
+
+
+.header__nav{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  justify-self: center;
+}
+.nav__button{
+  font-family: 'Strait', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 5px;
+  border-radius: 5px;
+  border: transparent;
+  width: 20vh;
+  height: 30px;
+}
+.nav__button:hover{
+  background-color: #e8122b;
+  color: #e8e8e8;
+}
+.nav__button-active{
+  font-family: 'Strait', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 5px;
+  border-radius: 5px;
+  border: transparent;
+  width: 20vh;
+  height: 30px;
+  background-color: #e8122b;
+  color: #e8e8e8;
+}
