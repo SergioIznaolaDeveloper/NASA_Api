@@ -5,17 +5,18 @@ import Leaflet from '../../../hooks/leaflet'
 import FetchLandings from '../../../hooks/fetchLandings'
 import { LandingContext } from "../../../Context/LandingContext";
 import { NavigatorContext } from "../../../Context/NavigatorContext";
-
+import { Post } from '../../../Context/Post';
 
 export default function Landings() {
   const [list, setList] = useState([])
   const {landingInputs, pagination, orderBy} = useContext(LandingContext);
+  const { putEdit } = useContext(Post)
   const {setNavActive} = useContext(NavigatorContext);
 
   useEffect(() => {
     setNavActive("landings"); // set navbar active
     FetchLandings(landingInputs, orderBy, setList) // hook to fetch landings
-  } , [landingInputs, pagination, orderBy])
+  } , [landingInputs, pagination, orderBy, putEdit])
 
 return (
   <div className="landings">

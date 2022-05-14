@@ -28,43 +28,43 @@ export default function leaflet(props) {
 
 const getIcon = (_iconSize) => {
   return L.icon({
-    iconUrl: require("../Static/Icons/asteroide.png"),
-    iconSize: [20],
+    iconUrl: require("../Static/Icons/asteroide.gif"),
+    iconSize: [30],
   });
 }
 const getIconH = () => {
   return L.icon({
-    iconUrl: require("../Static/Icons/H6.png"),
-    iconSize: [20],
+    iconUrl: require("../Static/Icons/H6.gif"),
+    iconSize: [30],
   });
 }
 const getIconL = () => {
   return L.icon({
-    iconUrl: require("../Static/Icons/L6.png"),
-    iconSize: [20],
+    iconUrl: require("../Static/Icons/L6.gif"),
+    iconSize: [40],
   });
 }
 const getIconDio = () => {
   return L.icon({
-    iconUrl: require("../Static/Icons/diogenite.png"),
-    iconSize: [20],
+    iconUrl: require("../Static/Icons/diogenite.gif"),
+    iconSize: [30],
   });
 }
 const getIconVar = () => {
   return L.icon({
-    iconUrl: require("../Static/Icons/undefined.png"),
-    iconSize: [20],
+    iconUrl: require("../Static/Icons/undefined.gif"),
+    iconSize: [30],
   });
 }
 const getIconSun = () => {
   return L.icon({
     iconUrl: require("../Static/Icons/sun.gif"),
-    iconSize: [60],
+    iconSize: [120],
   });
 }
 
   return (
-    <MapContainer id="map" center={[getSunEuler()[0], getSunEuler()[1]]} zoom={3} scrollWheelZoom={false}>
+    <MapContainer id="map" center={[getSunEuler()[0], getSunEuler()[1]]} zoom={4} scrollWheelZoom={false}>
     {props.data.map((item, i) => {
       {if(item.reclat && item.reclong !== undefined){
           if(item.recclass === "H6" || item.recclass === "H5" || item.recclass === "H3-5" || item.recclass === "H" || item.recclass === "H4") {

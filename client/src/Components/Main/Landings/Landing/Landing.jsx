@@ -1,21 +1,34 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { LandingContext } from "../../../../Context/LandingContext";
 import FormEdit from './FormEdit/FormEdit';
-const urlDelete = process.env.REACT_APP_URL_DELETE
 
 export default function Landing(props) {
   const {nextPage, prevPage, pagination} = useContext(LandingContext);
   const [tenToTen, setTenToTen] = useState([])
   const [edit, setEdit] = useState(false)
+  const [info, setInfo] = useState(false)
+  
   useEffect(() => {
     setTenToTen(props.data.slice(pagination.first, pagination.last))
   } , [props])
-  const buttonEdit = async (event) => {
-    event.preventDefault()
-    setEdit(true)
+  
+  const buttonEdit = () => {
+    edit === false ? setEdit(true) : setEdit(false)
   }
+  const buttonInfo = () => {
+    info === false ? setInfo(true) : setInfo(false)
+  }
+
   return ( 
     <section className='pag-land__container'>{/* Check to see if any items are found*/}
+     
+      <div className='more-edit'>
+      {info === false
+      ? <button className='landing__button-info' onClick={buttonInfo}>MORE INFO</button>
+        :<button className='landing__button-info' onClick={buttonInfo}>CLOSE INFO</button>
+    }
+      <button className='landing__button' onClick={buttonEdit}>EDIT LANDINGS</button>
+      </div>
       <div className='pagination__container'>
         {tenToTen.length !== 0
         ? pagination.first === 0
@@ -49,46 +62,52 @@ export default function Landing(props) {
                     : <div className="landing__img"></div>}
                 </div>
               <div className="landing__container-info">
-              {edit === false ? 
-              ( <>
+              {edit === true ? 
+              ( <FormEdit data={item} state={buttonEdit} />
+              ) : (
+                <>
                 <div className='data-data'>
                 <p className="landing__info-t">Name:</p>
                 <p className="landing__info">{item.name}</p>
               </div>
               <div className='data-data'>
-                <p className="landing__info-t">Mass: </p>
-                <p className="landing__info">{item.mass}</p>
-              </div>
-              <div className='data-data'>
+                  <p className="landing__info-t">Recclass:</p>
+                  <p className="landing__info">{item.recclass}</p>
+                </div>
+
+              {info === true 
+              ? ( 
+                <div className="extended__info">
+                <div className='data-data'>
                 <p className="landing__info-t">Id:</p>
                 <p className="landing__info">{item.id}</p>
               </div>
-              <div className='data-data'>
-                <p className="landing__info-t">Recclass:</p>
-                <p className="landing__info">{item.recclass}</p>
-              </div>
-              <div className='data-data'>
-                <p className="landing__info-t">Year: </p>
-                <p className="landing__info">{item.year}</p>
-              </div>
-              <div className='data-data'>
-                <p className="landing__info-t">Latitude: </p>
-                <p className="landing__info">{item.reclat}</p>
-              </div>
-              <div className='data-data'>
-                <p className="landing__info-t">Longitude: </p>
-                <p className="landing__info">{item.reclong}</p>
-              </div>
-                <form action="">
-                <button className='landing__button' onClick={buttonEdit}>EDIT LANDING</button>
-                </form>
-                <form action={`${urlDelete}/${item.id}`}method='POST'>
-                <button className='landing__button'>DESTROY LANDING</button>
-                </form></>
-              ) : (
-                <FormEdit data={item}/>
+                <div className='data-data'>
+                  <p className="landing__info-t">Mass: </p>
+                  <p className="landing__info">{item.mass}</p>
+                </div>
+                <div className='data-data'>
+                  <p className="landing__info-t">Year: </p>
+                  <p className="landing__info">{item.year}</p>
+                </div>
+                <div className='data-data'>
+                  <p className="landing__info-t">Latitude: </p>
+                  <p className="landing__info">{item.reclat}</p>
+                </div>
+                <div className='data-data'>
+                  <p className="landing__info-t">Longitude: </p>
+                  <p className="landing__info">{item.reclong}</p>
+                </div>
+                </div>
+              ):(
+              <></>
               )}
-              </div>
+              <form action={`/api/astronomy/landings/delete/${item.id}`}method='POST'>
+                <button className='landing__button'>DESTROY LANDING</button>
+              </form>
+              <button className='landing__button' onClick={buttonInfo}>BUY THE RIGTHS</button></>
+              )}
+              </div> 
             </div>
           );
         })}

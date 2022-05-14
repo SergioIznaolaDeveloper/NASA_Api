@@ -18,6 +18,7 @@ export default function App() {
   const [orderBy, setOrderBy] = useState(""); // Ordenar por
   const [create, setCreate] = useState(false)
   const [postCreate, setPostCreate] = useState([])  
+  const [putEdit, setPutEdit] = useState([])  
   
 // Funcion para cambiar el estado de la paginacion en PREV
   const prevPage = async (e) => {
@@ -49,11 +50,13 @@ export default function App() {
   const onChangeInputLMass = async (e) => {
     e.preventDefault();
     setLandingInputs(["mass", e.target.value]);
+    setPagination({first: 0, last: 10})
   };
   // Añadir busqueda por class
   const onChangeInputLClass = async (e) => {
     e.preventDefault();
     setLandingInputs(["class", e.target.value]);
+    setPagination({first: 0, last: 10})
   };
   // Añadir busqueda from ...
   const onChangeInputLFrom = async (e) => {
@@ -61,6 +64,7 @@ export default function App() {
     landingInputs[0] === "to"
     ? setLandingInputs([...landingInputs,"from", e.target.value])
     : setLandingInputs(["from", e.target.value]);
+    setPagination({first: 0, last: 10})
   };
    // Añadir busqueda to ...
   const onChangeInputLTo = async (e) => {
@@ -68,6 +72,7 @@ export default function App() {
     landingInputs[0] === "from"
     ? setLandingInputs([...landingInputs,"to", e.target.value])
     : setLandingInputs(["to", e.target.value]);
+    setPagination({first: 0, last: 10})
   
   };
   // al volver a home borra los inputs de Landings
@@ -89,8 +94,10 @@ export default function App() {
   getPic,
   };
   const post = {
+    putEdit, 
     postCreate,
     setPostCreate,
+    setPutEdit,
   }
   const nav = {
     navActive, 

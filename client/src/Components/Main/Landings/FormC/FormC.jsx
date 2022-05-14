@@ -1,11 +1,11 @@
 import axios from 'axios';
-import React, {useContext, useEffect} from 'react'
+import React, {useContext } from 'react'
 import { useForm } from "react-hook-form";
 import { LandingContext } from "../../../../Context/LandingContext"
 import { Post } from "../../../../Context/Post"
 const urlCreate = process.env.REACT_APP_URL_CREATE
-
 export default function FormC() {
+  console.log("create "+urlCreate)
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const { setPostCreate, postCreate } = useContext(Post)
   const { setCreate } = useContext(LandingContext)
