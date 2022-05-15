@@ -38,9 +38,10 @@ export default function Header() {
             Neas
         </button>
       </Link>
-      <div className="carrito"></div>
       </div>
-      
+      <Link to={'./store'}>
+      <div className="carrito"></div>
+      </Link>
     </header>
     );
 }

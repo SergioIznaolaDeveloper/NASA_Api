@@ -2,14 +2,14 @@ import axios from 'axios';
 import React, {useContext}  from 'react'
 import { useForm } from "react-hook-form";
 import { Post } from "../../../../../Context/Post"
-
+const urlEdit = process.env.REACT_APP_URL_EDIT
 export default function FormEdit(props) {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
-  const { setPutEdit, putEdit } = useContext(Post)
+  const { setPutEdit } = useContext(Post)
   const onSubmit = async d => {
     try{
     setPutEdit(d)
-    const res = await axios.put(`api/astronomy/landings/edit/${d.id}/${d.name}/${d.recclass}/${d.mass}/${d.year}/${d.reclat}/${d.reclong}`)
+    const res = await axios.put(`${urlEdit}/${d.id}/${d.name}/${d.recclass}/${d.mass}/${d.year}/${d.reclat}/${d.reclong}`)
     const data = await res.data;
     console.log(data)
     reset()

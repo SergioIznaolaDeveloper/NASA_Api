@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import FormC from '../FormC';
 import { DebounceInput } from 'react-debounce-input';
 import { LandingContext } from "../../../../Context/LandingContext";
-
 export default function FilterLandings(props) {
   const {onChangeOrderBy, landingInputs, onChangeInputLMass, onChangeInputLClass, onChangeInputLFrom, onChangeInputLTo, create, onChangeInputLCreate} = useContext(LandingContext);
   return (
