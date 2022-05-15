@@ -2,6 +2,9 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "axios": "^0.26.1",
     "konva": "^8.3.8",
