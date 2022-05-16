@@ -1,63 +1,30 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState, useContext } from 'react'
+import Nea from './Nea'
+import FilterNeas from './FilterNeas';
+import LeafletN from '../../../hooks/leafletN'
+import FetchNeas from '../../../hooks/fetchNeas'
+import { NeasContext } from "../../../Context/NeasContext";
+import { NavigatorContext } from "../../../Context/NavigatorContext";
+import { Post } from '../../../Context/Post';
 
-class List extends Component {
-  // Initialize the state
-  constructor(props){
-    super(props);
-    this.state = {
-      list: []
-    }
-  }
+export default function Neas() {
+  const [list, setList] = useState([])
+  const {neasInputs, pagination, orderBy} = useContext(NeasContext);
+  const {putEdit } = useContext(Post)
+  const {setNavActive} = useContext(NavigatorContext);
 
-  // Fetch the list on first mount
-  componentDidMount() {
-    this.getList();
-  }
+  useEffect(() => {
+    setNavActive("Neas"); // set navbar active
+    FetchNeas(neasInputs, orderBy, setList) // hook to fetch Neas
+  } , [neasInputs, pagination, orderBy, putEdit])
 
-  // Retrieves the list of items from the Express app
-  getList = () => {
-    fetch('/api/astronomy/neas')
-    .then(res => res.json())
-    .then(list => this.setState({ list }))
-  }
-
-  render() {
-    const { list } = this.state;
-
-    return (
-      <div className="neas">
-        <h1>All of Neas</h1>
-
-        {/* Check to see if any items are found*/}
-        {list.length ? (
-          <div>
-            {/* Render the list of items */}
-            {list.map((item, i) => {
-              return(
-                <div key={i}>
-                  <p >Designation: {item.designation}</p>
-                  <p>Discovery date: {item.discovery_date}</p>
-                  <p>h_mag: {item.h_mag}</p>
-                  <p>Moid_Au: {item.moid_au}</p>
-                  <p>q_au_1: {item.q_au_1}</p>
-                  <p>q_au_2: {item.q_au_2}</p>
-                  <p>period year: {item.period_yr}</p>
-                  <p>i_deg: {item.i_deg}</p>
-                  <p>pha: {item.pha}</p>
-                  <p>Orbit class: {item.orbit_class}</p>
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          <div>
-            <h2>No List Items Found</h2>
-          </div>
-        )
-      }
-      </div>
-    );
-  }
+return (
+  <div className="neas">
+  <LeafletN data={list}/>
+  <FilterNeas data={orderBy}/>
+  <Nea data={list} />
+</div>
+)
 }
 
-export default List;
+// list.slice(pagination.first, pagination.last)

@@ -5,6 +5,8 @@ import Neas from './Neas/Neas';
 import Landings from './Landings/Landings';
 import Delete from '../Utils/Delete/Delete';
 import NoDelete from '../Utils/NoDelete/NoDelete';
+import Store from './Store/Store';
+
 
 export default function Main() {
   return (
@@ -12,6 +14,7 @@ export default function Main() {
     <Route exact path='/' component={Home}/>
     <Route path='/landings' component={Landings}/>
     <Route path='/neas' component={Neas}/>
+    <Route path='/store' component={Store}/>
     <Route path= '/delete' component={Delete}/>
     <Route path= '/nodelete' component={NoDelete}/>
     </Switch>

@@ -1,7 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { LandingContext } from "../../../../Context/LandingContext";
 import FormEdit from './FormEdit/FormEdit';
-const urlDelete = process.env.REACT_APP_URL_DELETE
+
+const urlDelete = process.env.REACT_APP_URL_DELETE_L
+
 export default function Landing(props) {
   const {nextPage, prevPage, pagination} = useContext(LandingContext);
   const [tenToTen, setTenToTen] = useState([])
@@ -27,7 +29,11 @@ export default function Landing(props) {
       ? <button className='landing__button-info' onClick={buttonInfo}>EXTENDED INFO</button>
         :<button className='landing__button-info' onClick={buttonInfo}>CLOSE INFO</button>
     }
-      <button className='landing__button' onClick={buttonEdit}>EDIT LANDINGS</button>
+    {edit === false
+    ? <button className='landing__button' onClick={buttonEdit}>EDIT LANDINGS</button>
+    : <button className='landing__button' onClick={buttonEdit}>CLOSE EDITION</button>
+    }
+      
       </div>
       <div className='pagination__container'>
         {tenToTen.length !== 0

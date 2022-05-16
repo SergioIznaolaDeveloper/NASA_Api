@@ -3,7 +3,7 @@ import React, {useContext } from 'react'
 import { useForm } from "react-hook-form";
 import { LandingContext } from "../../../../Context/LandingContext"
 import { Post } from "../../../../Context/Post"
-const urlCreate = process.env.REACT_APP_URL_CREATE
+const urlCreate = process.env.REACT_APP_URL_CREATE_L
 export default function FormC() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const { setPostCreate, postCreate } = useContext(Post)

@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, {useContext}  from 'react'
 import { useForm } from "react-hook-form";
 import { Post } from "../../../../../Context/Post"
-const urlEdit = process.env.REACT_APP_URL_EDIT
+const urlEdit = process.env.REACT_APP_URL_EDIT_L
 export default function FormEdit(props) {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const { setPutEdit } = useContext(Post)
