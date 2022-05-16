@@ -61,10 +61,10 @@
 }
 .carrito{
   position: absolute;
+  top: 5px;  
+  right: 20px;  
   width: 40px;
   height: 40px;
-  top: 6px;
-  right: 10px;
   background-image: url('../../Static/Logos/carrito.png');
   background-position: center;
   background-size: cover;
