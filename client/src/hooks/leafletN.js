@@ -180,25 +180,27 @@ const getIconSaturno = () => {
               <p>Longitude: {0}</p>
           </Popup>
           </Marker>
-          <Marker icon={getIconTierra()} position={[0, 10]}>
+          <Marker icon={getIconTierra()} position={[0,10]}>
           <Popup>
           <p>designation: Tierra</p>
-              <p>Latitude: {1}</p>
-              <p>Longitude: {1}</p>
+              <p>Latitude: {coordenadas(1,1)[0]*10}</p>
+              <p>Longitude: {coordenadas(1,1)[0]*10}</p>
+              <p>Distance to sun: {1}au</p>
           </Popup>
           </Marker>
-          <Marker icon={getIconMarte()} position={[1, 15]}>
+          <Marker icon={getIconMarte()} position={[coordenadas(1.5,1)[0]*10,coordenadas(1.5,1)[1]*10]}>
           <Popup>
-          <p>designation: Tierra</p>
-              <p>Latitude: {1}</p>
-              <p>Longitude: {1}</p>
+          <p>designation: Marte</p>
+              <p>Latitude: {[coordenadas(1.5,1)[0]]}</p>
+              <p>Longitude: {[coordenadas(1.5,1)[1]]}</p>
+
           </Popup>
           </Marker>
           <Marker icon={getIconJupiter()} position={[1, 50]}>
           <Popup>
           <p>designation: Tierra</p>
-              <p>Latitude: {1}</p>
-              <p>Longitude: {1}</p>
+              <p>Latitude: {1}ua</p>
+              <p>Longitude: {1}ua</p>
           </Popup>
           </Marker>
           <Marker icon={getIconSaturno()} position={[7, 95]}>

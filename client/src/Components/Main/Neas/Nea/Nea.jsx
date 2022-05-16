@@ -55,15 +55,14 @@ export default function Nea(props) {
             <div className="landing" key={i}>
               <div className="id-img">
                 <p className='landing__id'>#{i+1+pagination.first}</p>
-                {item.orbit_class === "H6" || item.recclass === "H5" || item.recclass === "H3-5" || item.recclass === "H" || item.recclass === "H4" ? 
+                {item.orbit_class === "Apollo" ? 
                 <div className="landing__imgH"></div> 
-                : item.recclass === "L6"  || item.recclass === "L5" || item.recclass === "LL5" || item.recclass === "LL6" || item.recclass === "LL4" || item.recclass === "L4" 
+                : item.orbit_class === "Amor" 
                   ? <div className="landing__imgL"></div>
-                  : item.recclass === "Diogenite" || item.recclass === "Diogenite-pm" 
-                  ? <div className="landing__imgD"></div>
-                    : item.recclass === "Aubrite" || item.recclass === "C" || item.recclass === "Unknown" || item.recclass === "Pallasite"  || item.recclass === "Eucrite-mmict" || item.recclass === "Ureilite-an" || item.recclass === "Eucrite-pmict"
-                    ?<div className="landing__imgVar"></div>
-                    : <div className="landing__img"></div>}
+                  : item.orbit_class === "Aten"  
+                    ? <div className="landing__imgVar"></div>
+                    :<div className="landing__imgVar"></div>
+                   }
                 </div>
               <div className="landing__container-info">
               {edit === true ? 
