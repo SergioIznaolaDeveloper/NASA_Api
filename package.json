@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
 
   "scripts": {
     "start": "node app.js",
@@ -18,5 +22,4 @@
     "nodemon": "^2.0.15",
     "path": "^0.12.7"
   }
-  
 }

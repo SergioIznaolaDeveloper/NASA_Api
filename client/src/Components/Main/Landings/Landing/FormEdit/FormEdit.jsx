@@ -5,7 +5,7 @@ import { Post } from "../../../../../Context/Post"
 const urlEdit = process.env.REACT_APP_URL_EDIT_L
 export default function FormEdit(props) {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
-  const { setPutEdit, putEdit } = useContext(Post)
+  const { setPutEdit } = useContext(Post)
   const onSubmit = async d => {
     try{
     setPutEdit(d)

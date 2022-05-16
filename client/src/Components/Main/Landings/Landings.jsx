@@ -6,7 +6,6 @@ import FetchLandings from '../../../hooks/fetchLandings'
 import { LandingContext } from "../../../Context/LandingContext";
 import { NavigatorContext } from "../../../Context/NavigatorContext";
 import { Post } from '../../../Context/Post';
-
 export default function Landings() {
   const [list, setList] = useState([])
   const {landingInputs, pagination, orderBy} = useContext(LandingContext);
