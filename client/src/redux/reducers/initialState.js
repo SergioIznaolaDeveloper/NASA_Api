@@ -1,38 +1,89 @@
 //Este es un objeto que representa el estado y muestra los productos por defecto
 //Devuelve los productos predeterminados y un arreglo vacío "cart"
 //que es nuestro  estado inicial para el carro de compras
-
+import M1 from "../../assets/m1.jpg"
+import M2 from "../../assets/m2.jpg"
+import M3 from "../../assets/m3.jpg"
+import M4 from "../../assets/m4.jpg"
+import M5 from "../../assets/m5.jpg"
+import M6 from "../../assets/m6.jpg"
+import M7 from "../../assets/m7.jpg"
+import M8 from "../../assets/m8.jpg"
+import M9 from "../../assets/m9.jpg"
+import M10 from "../../assets/m10.jpg"
 
 export default {
   cart: [],
   products: [
     {
       id: 1,
-      name: "Lover Meteoirite",
-      category:"Love",
+      name: "MUONIONALUSTA",
+      category:"METEORITO",
       price: 21990,
-      image:"https://static2.elcomercio.es/www/pre2017/multimedia/noticias/201506/16/media/cortadas/icaro--575x323.jpg"
+      image:M1
     },
     {
       id: 2,
       name: "Super Landing",
-      category:"Ego",
+      category:"METEORITO",
       price: 30990,
-      image:"https://estaticos-cdn.elperiodico.com/clip/4667e9f7-ed08-427d-a94a-84564a84f47a_alta-libre-aspect-ratio_default_0.jpg"
+      image: M2
     },
     {
       id: 3,
       name: "Worlds destructor",
-      category:"War",
+      category:"METEORITO",
       price: 32990,
-      image:"https://imagenes.elpais.com/resizer/4EByFgldlsAlx9e_5LD7pbOuL8o=/1200x0/arc-anglerfish-eu-central-1-prod-prisa.s3.amazonaws.com/public/ULELZLPEAGH2Y5LGLI4L7MEC5Q.jpg"
+      image: M3
     },
     {
       id: 4,
       name: "Mini-Meteor",
-      category:"Cheeper",
+      category:"METEORITO",
       price: 10990,
-      image:"https://img.freepik.com/foto-gratis/meteorito-rojo-espacio-oscuro-e-iluminacion-neon_124595-1275.jpg"
+      image:M4
+    },
+    {
+      id: 5,
+      name: "Lover Meteoirite",
+      category:"METEORITO",
+      price: 21990,
+      image:M5
+    },
+    {
+      id: 6,
+      name: "Super Landing",
+      category:"METEORITO",
+      price: 30990,
+      image: M6
+    },
+    {
+      id: 7,
+      name: "Worlds destructor",
+      category:"METEORITO",
+      price: 32990,
+      image: M7
+    },
+    {
+      id: 8,
+      name: "Mini-Meteor",
+      category:"METEORITO",
+      price: 10990,
+      image:M8
+    },
+    {
+      id: 9,
+      name: "Worlds destructor",
+      category:"METEORITO",
+      price: 32990,
+      image: M9
+    },
+    {
+      id: 10,
+      name: "Mini-Meteor",
+      category:"METEORITO",
+      price: 10990,
+      image:M10
     }
   ]
 }

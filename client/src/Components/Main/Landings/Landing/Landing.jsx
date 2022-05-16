@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { LandingContext } from "../../../../Context/LandingContext";
 import FormEdit from './FormEdit/FormEdit';
-
+const urlDelete = process.env.REACT_APP_URL_DELETE_L
 export default function Landing(props) {
   const {nextPage, prevPage, pagination} = useContext(LandingContext);
   const [tenToTen, setTenToTen] = useState([])
@@ -106,7 +106,7 @@ export default function Landing(props) {
               ):(
               <></>
               )}
-              <form action={`/api/astronomy/landings/delete/${item.id}`}method='POST'>
+              <form action={`${urlDelete}/${item.id}`}method='POST'>
                 <button className='landing__button'>DESTROY LANDING</button>
               </form>
               <button className='landing__button' onClick={buttonInfo}>BUY THE RIGTHS</button></>

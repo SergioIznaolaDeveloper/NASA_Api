@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import { PicContext } from "./Context/PicContext";
 import { NavigatorContext } from './Context/NavigatorContext';
 import { LandingContext } from './Context/LandingContext';
+import { NeasContext } from './Context/NeasContext';
+
 import { Post } from './Context/Post';
 import Main from "./Components/Main/Main";
 import Header from "./Components/Header/Header";
@@ -13,7 +15,10 @@ import "./Styles/Styles.scss";
 export default function App() {
   const [pic, setPic] = useState([]); // Datos para la home
   const [navActive, setNavActive] = useState("home"); // Estado botón de navegacion
+  // estados para LANDINGS
   const [landingInputs, setLandingInputs] = useState([""]); // texto del input
+  // estados para NEAS
+  const [neasInputs, setNeasInputs] = useState([""]); // texto del input
   const [pagination, setPagination] = useState({first: 0, last: 10}) // Paginación
   const [orderBy, setOrderBy] = useState(""); // Ordenar por
   const [create, setCreate] = useState(false)
@@ -73,11 +78,11 @@ export default function App() {
     ? setLandingInputs([...landingInputs,"to", e.target.value])
     : setLandingInputs(["to", e.target.value]);
     setPagination({first: 0, last: 10})
-  
   };
   // al volver a home borra los inputs de Landings
   const onClickToHome = () => {
     setLandingInputs([""]);
+    setNeasInputs([""]);
   };
 
   // Funcion para cambiar el orderBy
@@ -89,6 +94,38 @@ export default function App() {
   const onClickCreate = async (data) => {
     setPostCreate(data);
   }
+
+//////////////////////////////NEAS
+
+  // Añadir busqueda por orbit_class
+  const onChangeInputNorbit_class = async (e) => {
+    e.preventDefault();
+    setNeasInputs(["orbit_class", e.target.value]);
+    setPagination({first: 0, last: 10})
+  };
+// Añadir busqueda por mass
+const onChangeInputNFilter = async (e) => {
+  e.preventDefault();
+  setNeasInputs(["h_mag", e.target.value]);
+  setPagination({first: 0, last: 10})
+};
+
+  // Añadir busqueda from ...
+  const onChangeInputNFrom = async (e) => {
+    e.preventDefault();
+    neasInputs[0] === "to"
+    ? setNeasInputs([...neasInputs,"from", e.target.value])
+    : setNeasInputs(["from", e.target.value]);
+    setPagination({first: 0, last: 10})
+  };
+   // Añadir busqueda to ...
+  const onChangeInputNTo = async (e) => {
+    e.preventDefault();
+    neasInputs[0] === "from"
+    ? setNeasInputs([...neasInputs,"to", e.target.value])
+    : setNeasInputs(["to", e.target.value]);
+    setPagination({first: 0, last: 10})
+  };
   const infoPicture = {
   pic,
   getPic,
@@ -121,6 +158,22 @@ export default function App() {
     prevPage,
     nextPage,
   }
+  const neas = {
+    create,
+    pagination,
+    neasInputs,
+    orderBy,
+    setCreate,
+    nextPage, 
+    prevPage,
+    setNeasInputs,
+    onChangeInputLCreate,
+    onChangeOrderBy,
+    onChangeInputNorbit_class,
+    onChangeInputNFilter,
+    onChangeInputNFrom,
+    onChangeInputNTo,
+  }
     // funcion para recoger la mass de landing seleccionado desde input
 
 
@@ -129,6 +182,7 @@ export default function App() {
     <div className="App">
       <NavigatorContext.Provider value={nav}>
       <Header />
+      <NeasContext.Provider value={neas}>
       <LandingContext.Provider value={landing}>
       <PicContext.Provider value={infoPicture}>
       <Post.Provider value={post}>
@@ -136,6 +190,7 @@ export default function App() {
       </Post.Provider>
       </PicContext.Provider>
       </LandingContext.Provider>
+      </NeasContext.Provider>
       </NavigatorContext.Provider>
       <Footer />
     </div>

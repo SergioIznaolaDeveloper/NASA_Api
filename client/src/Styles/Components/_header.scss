@@ -61,12 +61,12 @@
 }
 .carrito{
   position: absolute;
-  right: 20px;
   width: 40px;
   height: 40px;
+  top: 6px;
+  right: 10px;
   background-image: url('../../Static/Logos/carrito.png');
   background-position: center;
   background-size: cover;
-  margin-left: 10px;
   justify-self: flex-start;
 }

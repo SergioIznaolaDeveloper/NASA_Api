@@ -1,30 +1,9 @@
 import React from 'react'
-import { MapContainer } from 'react-leaflet/MapContainer'
+import { MapContainer, TileLayer} from 'react-leaflet'
 import { Marker } from 'react-leaflet/Marker'
 import { Popup } from 'react-leaflet/Popup'
 
 export default function leaflet(props) {
-  
-   const getSunEuler = (date) =>{
-    const now = date || new Date();
-
-    // The boilerplate: fiddling with dates
-    const soy = (new Date(now.getFullYear(), 0, 0)).getTime();
-    const eoy = (new Date(now.getFullYear() + 1, 0, 0)).getTime();
-    const nows = now.getTime();
-    const poy = (nows - soy) / (eoy - soy);
-
-    const secs = now.getUTCMilliseconds() / 1e3
-            + now.getUTCSeconds()
-            + 60 * (now.getUTCMinutes() + 60 * now.getUTCHours());
-    const pod = secs / 86400; // leap secs? nah.
-
-    // The actual magic
-    const lat = (-pod + 0.5) * Math.PI * 2;
-    const lon = Math.sin((poy - .22) * Math.PI * 2) * .41;
-
-    return ([lat, lon]);
-}
 
 const getIcon = (_iconSize) => {
   return L.icon({
@@ -56,15 +35,11 @@ const getIconVar = () => {
     iconSize: [30],
   });
 }
-const getIconSun = () => {
-  return L.icon({
-    iconUrl: require("../Static/Icons/sun.gif"),
-    iconSize: [120],
-  });
-}
 
   return (
-    <MapContainer id="map" center={[getSunEuler()[0], getSunEuler()[1]]} zoom={4} scrollWheelZoom={false}>
+    <MapContainer id="map" center={[40.4167, -3.70325]} zoom={5} scrollWheelZoom={false} ><TileLayer
+    url="https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=ba96df09c7e745539d14b7b5008af08a"
+  />
     {props.data.map((item, i) => {
       {if(item.reclat && item.reclong !== undefined){
           if(item.recclass === "H6" || item.recclass === "H5" || item.recclass === "H3-5" || item.recclass === "H" || item.recclass === "H4") {
@@ -122,13 +97,6 @@ const getIconSun = () => {
         }
       }}
     })}
-    <Marker icon={getIconSun()} position={[getSunEuler()[0], getSunEuler()[1]]}>
-          <Popup>
-          <p>Name: Sun</p>
-              <p>Latitude: {getSunEuler()[0]}</p>
-              <p>Longitude: {getSunEuler()[1]}</p>
-          </Popup>
-          </Marker>
     </MapContainer>
   )
 }

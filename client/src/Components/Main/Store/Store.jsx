@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
-import Products from '../../../hooks/Products';
-import Cart from '../../../hooks/Cart';
+import Products from './Products';
+import Cart from './Cart/Cart';
+import React from 'react'
 
-export default class App extends Component {
-  render() {   
-    return (
-      <div className="App">
-        <p style={{backgroundColor:'#4f92b13b'}}>
+export default function Store() {
+  return (
+      <div className="store">
+        <Cart/>
         <h1>PRODUCTOS</h1>
-        </p>
         <h3 style={{color:'grey'}}>Selecciona poductos para agregarlos al carro de compras</h3>
         <Products/>
-        <Cart/>
       </div>
-    );
-  }
+  )
 }
-
