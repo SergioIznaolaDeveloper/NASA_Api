@@ -8,13 +8,13 @@ import { NavigatorContext } from "../../../Context/NavigatorContext";
 import { Post } from '../../../Context/Post';
 export default function Landings() {
   const [list, setList] = useState([])
-  const {landingInputs, pagination, orderBy} = useContext(LandingContext);
+  const {setLandingInputs, landingInputs, pagination, orderBy} = useContext(LandingContext);
   const { putEdit } = useContext(Post)
   const {setNavActive} = useContext(NavigatorContext);
 
   useEffect(() => {
     setNavActive("landings"); // set navbar active
-    FetchLandings(landingInputs, orderBy, setList) // hook to fetch landings
+    FetchLandings(landingInputs, orderBy, setList, setLandingInputs) // hook to fetch landings
   } , [landingInputs, pagination, orderBy, putEdit])
 
 return (

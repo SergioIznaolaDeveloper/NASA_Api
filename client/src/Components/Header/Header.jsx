@@ -9,7 +9,6 @@ export default function Header() {
       <div className="header__logo"/>
       <div className="header__nav">
       <Link to={'./'}>
-        {console.log(navActive)}
         {navActive === "home" 
         ?(
           <button className="nav__button-active">
@@ -34,9 +33,15 @@ export default function Header() {
          )}
       </Link>
       <Link to={'./neas'}>
-        <button className="nav__button">
+      {navActive === "neas" 
+        ?(<button className="nav__button-active">
             Neas
         </button>
+        ):(
+          <button className="nav__button">
+          Neas
+      </button>
+        )}
       </Link>
       </div>
       <Link to={'./store'}>

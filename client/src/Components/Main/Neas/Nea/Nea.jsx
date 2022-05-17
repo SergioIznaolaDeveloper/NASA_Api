@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { NeasContext } from "../../../../Context/NeasContext";
 import FormEdit from './FormEdit/FormEdit';
-const urlDelete = process.env.REACT_APP_URL_DELETE
+const urlDelete = process.env.REACT_APP_URL_DELETE_N
 export default function Nea(props) {
   const {nextPage, prevPage, pagination} = useContext(NeasContext);
   const [tenToTen, setTenToTen] = useState([])
@@ -105,7 +105,7 @@ export default function Nea(props) {
               ):(
               <></>
               )}
-              <form action={`${urlDelete}/${item.id}`}method='POST'>
+              <form action={`${urlDelete}/${item.designation}`}method='POST'>
                 <button className='landing__button'>DESTROY NEA</button>
               </form>
             </>

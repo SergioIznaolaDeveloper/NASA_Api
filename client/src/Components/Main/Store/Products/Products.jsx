@@ -4,17 +4,16 @@ import { addToCart } from '../../../../redux/actions/cartActions';
 
 function Products(props) {
   const productList = props.products.map( (item,index)  => {
-    return <div key={index}> 
-      <img src={item.image} alt="producto seleccionado" style={{ width: 200 }}/>
-      <p style={{ color:'blue',fontWeight:'bold'}}>
+    return <div key={index} className="product"> 
+      <img src={item.image} alt="product" className='product__img'/>
+      <p className='product__title'>
       {item.name}
       </p>
-      <p>{item.category}</p>
-      <p> CLP${item.price}  </p>
-      <button className="button"
+      <p className='product__category'>Class: {item.category}</p>
+      <p className='product__price'> {item.price.toFixed(2)} € </p>
+      <button className="product__button"
               onClick={() => props.addToCart(item)}>
-              <i className="fas fa-shopping-cart"></i>
-              Agregar al Carro 
+              ADD TO CART 
       </button> 
     </div>
   });

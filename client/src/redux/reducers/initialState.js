@@ -17,72 +17,72 @@ export default {
   products: [
     {
       id: 1,
-      name: "MUONIONALUSTA",
-      category:"METEORITO",
-      price: 21990,
+      name: "Special metalic",
+      category:"meteorite",
+      price: 52.5,
       image:M1
     },
     {
       id: 2,
-      name: "Super Landing",
-      category:"METEORITO",
-      price: 30990,
+      name: "Rocky metalic type 1",
+      category:"meteorite",
+      price: 33.0,
       image: M2
     },
     {
       id: 3,
-      name: "Worlds destructor",
-      category:"METEORITO",
-      price: 32990,
+      name: "Condrite type 1",
+      category:"meteorite",
+      price: 28.6,
       image: M3
     },
     {
       id: 4,
-      name: "Mini-Meteor",
-      category:"METEORITO",
-      price: 10990,
+      name: "Condrite type 2",
+      category:"meteorite",
+      price: 27.9,
       image:M4
     },
     {
       id: 5,
-      name: "Lover Meteoirite",
-      category:"METEORITO",
-      price: 21990,
+      name: "Condrite type 3",
+      category:"meteorite",
+      price: 29.9,
       image:M5
     },
     {
       id: 6,
-      name: "Super Landing",
-      category:"METEORITO",
-      price: 30990,
+      name: "Metalic type 2",
+      category:"meteorite",
+      price: 35.5,
       image: M6
     },
     {
       id: 7,
-      name: "Worlds destructor",
-      category:"METEORITO",
-      price: 32990,
+      name: "Metalic type 2",
+      category:"meteorite",
+      price: 37.8,
       image: M7
     },
     {
       id: 8,
-      name: "Mini-Meteor",
-      category:"METEORITO",
-      price: 10990,
+      name: "Acondrite",
+      category:"meteorite",
+      price: 45.2,
       image:M8
     },
     {
       id: 9,
-      name: "Worlds destructor",
-      category:"METEORITO",
-      price: 32990,
+      name: "Red Rock",
+      category:"meteorite",
+      price: 68.9,
       image: M9
     },
     {
       id: 10,
-      name: "Mini-Meteor",
-      category:"METEORITO",
-      price: 10990,
+      name: "Rocky metalic type 2",
+      category:"meteorite",
+      price: 42.8,
       image:M10
     }
   ]

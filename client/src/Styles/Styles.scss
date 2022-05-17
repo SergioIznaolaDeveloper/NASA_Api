@@ -53,7 +53,17 @@
   .nav__button-active {
     width: 80px;
   }
+  .carrito{
+    top: 10px;  
+    left: 110px;  
+    width: 30px;
+    height: 30px;
+  }
+  .length{
+    left: 95px;
 }
+}
+
 @media screen and (max-width: 425px) {
   #map {
     margin-top: 100px;
@@ -79,7 +89,23 @@
   }
   .home {
     margin-top: 180px;
+
   }
+  .carrito{
+    position: fixed;
+    z-index: 100;
+    left: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  .length{
+    left: 5px;
+    position: fixed;
+}
+.store{
+  margin-top: 180px;
+}
 }
 @media screen and (max-width: 375px) {
   #map {
@@ -93,11 +119,12 @@
     width: 310px;
     flex-flow: column;
   }
+  .neas {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
-.neas {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
