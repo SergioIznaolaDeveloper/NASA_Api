@@ -21,6 +21,7 @@ export default function fetchNeas(neasInputs, orderBy, setList, setNeasInputs) {
         .then((res) => res.json())
         .then((list) => setList(list))
       } else {
+        console.log("fetching from to order")
         fetch(`/api/astronomy/neas?from=${neasInputs[1]}&to=${neasInputs[3]}&order=${orderBy}`)
         .then((res) => res.json())
         .then((list) => setList(list))
@@ -70,13 +71,12 @@ export default function fetchNeas(neasInputs, orderBy, setList, setNeasInputs) {
           .then((list) => setList(list))
         }
       } else if (neasInputs[0] === "h_mag" && neasInputs[1] !== ""){
+
         if(orderBy===""){
-          console.log("por hg")
         fetch(`/api/astronomy/neas/class/${neasInputs[1]}`)
         .then((res) => res.json())
         .then((list) => setList(list))
         } else {
-          console.log("por h_mag front")
           fetch(`/api/astronomy/neas/class/${neasInputs[1]}/${orderBy}`)
           .then((res) => res.json())
           .then((list) => setList(list))

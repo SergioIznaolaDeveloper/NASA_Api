@@ -9,40 +9,46 @@ const getNeas = async (req, res) => {
   let data;
   try {
  if (req.params.class) {
-  if(req.query.order === "orbit_class"){
+  if(req.params.order === "orbit_class"){
    console.log("order por class")
-      console.log(req.params.class);
       data = await Nea.find(
         { orbit_class: req.params.class },
         "-_id"
       ).sort({ orbit_class: 1 });
       res.status(200).json(data);
-  }else if (req.query.order === "designation"){
+  }else if (req.params.order === "designation"){
     console.log("order por desig")
-    console.log(req.params.class);
+    if (req.params.class.length < 3) {
+      console.log("h_mag order por desig")
+      data = await Nea.find(
+        { h_mag: req.params.class },
+        "-_id"
+      ).sort({ designation: 1 });
+      res.status(200).json(data);
+    } else {
+     console.log("orbit class order por desig")
     data = await Nea.find(
       { orbit_class: req.params.class },
       "-_id"
     ).sort({ designation: 1 });
     res.status(200).json(data);
-  } else if (req.query.order === "period_yr"){
-    console.log("order por date")
-    console.log(req.params.class);
-    data = await Nea.find(
-      { orbit_class: req.params.class },
-      "-_id"
-    ).sort({ period_yr: 1 });
-    res.status(200).json(data);
-  } else if (req.query.order === "h_mag"){
+    }
+  } else if (req.params.order === "h_mag"){
     console.log("order por h_mag")
     data = await Nea.find(
       { orbit_class: req.params.class },
       "-_id"
     ).sort({ h_mag: 1 });
     res.status(200).json(data);
+  } else if (req.params.order === "period__yr"){
+    console.log("order por date")
+    data = await Nea.find(
+      { orbit_class: req.params.class},
+      "-_id"
+    ).sort({ period_yr: 1 });
+    res.status(200).json(data);
   } else {
     if (req.params.class.length < 3) {
-    console.log(req.params.class);
     data = await Nea.find({
       h_mag: req.params.class
     },
@@ -57,11 +63,42 @@ const getNeas = async (req, res) => {
   }
   }
     } else if (req.query.from && req.query.to) {
+      console.log("from to backend"+req.query.order)
+      if(req.query.order === "orbit_class"){
+        
       data = await Nea.find(
         { discovery_date: { $gte: req.query.from, $lte: req.query.to } },
         " -_id"
-      );
+      ).sort({ orbit_class: 1 });
       res.status(200).json(data);
+      }else if(req.query.order === "designation"){
+        
+        data = await Nea.find(
+          { discovery_date: { $gte: req.query.from, $lte: req.query.to } },
+          " -_id"
+        ).sort({ designation: 1 });
+        res.status(200).json(data);
+      }else if(req.query.order === "period_yr"){
+        
+        data = await Nea.find(
+          { discovery_date: { $gte: req.query.from, $lte: req.query.to } },
+          " -_id"
+        ).sort({ period_yr: 1 });
+        res.status(200).json(data);
+      } else if (req.query.order === "h_mag"){
+        
+        data = await Nea.find(
+          { discovery_date: { $gte: req.query.from, $lte: req.query.to } },
+          " -_id"
+        ).sort({ h_mag: 1 });
+        res.status(200).json(data);
+      } else {
+        data = await Nea.find(
+          { discovery_date: { $gte: req.query.from, $lte: req.query.to } },
+          " -_id"
+        );
+        res.status(200).json(data);
+      }
     } else if (req.query.from) {
       data = await Nea.find(
         { discovery_date: { $gte: req.query.from } },

@@ -5,7 +5,6 @@ import { NeasContext } from "../../../../Context/NeasContext"
 import { Post } from "../../../../Context/Post"
 const urlCreate = process.env.REACT_APP_URL_CREATE_N
 export default function FormC() {
-  console.log("create "+urlCreate)
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const { setPostCreate, postCreate } = useContext(Post)
   const { setCreate } = useContext(NeasContext)
