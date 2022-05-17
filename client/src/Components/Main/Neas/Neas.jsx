@@ -13,7 +13,7 @@ export default function Neas() {
   const {putEdit } = useContext(Post)
   const {setNavActive} = useContext(NavigatorContext);
   useEffect(() => {
-    setNavActive("neas"); // set navbar active
+    setNavActive("Neas"); // set navbar active
     FetchNeas(neasInputs, orderBy, setList, setNeasInputs) // hook to fetch Neas
   } , [neasInputs, pagination, orderBy, putEdit])
 

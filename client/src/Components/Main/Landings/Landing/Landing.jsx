@@ -110,8 +110,7 @@ export default function Landing(props) {
               )}
               <form action={`${urlDelete}/${item.id}`}method='POST'>
                 <button className='landing__button'>DESTROY LANDING</button>
-              </form>
-              <button className='landing__button' onClick={buttonInfo}>BUY THE RIGTHS</button></>
+              </form></>
               )}
               </div> 
             </div>

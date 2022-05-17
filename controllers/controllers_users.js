@@ -1,4 +1,4 @@
-const Nea = require("../models/models_neas");
+const Nea = require("../models/models_users");
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
@@ -10,19 +10,23 @@ const getNeas = async (req, res) => {
   try {
  if (req.params.class) {
   if(req.params.order === "orbit_class"){
+   console.log("order por class")
       data = await Nea.find(
         { orbit_class: req.params.class },
         "-_id"
       ).sort({ orbit_class: 1 });
       res.status(200).json(data);
   }else if (req.params.order === "designation"){
+    console.log("order por desig")
     if (req.params.class.length < 3) {
+      console.log("h_mag order por desig")
       data = await Nea.find(
         { h_mag: req.params.class },
         "-_id"
       ).sort({ designation: 1 });
       res.status(200).json(data);
     } else {
+     console.log("orbit class order por desig")
     data = await Nea.find(
       { orbit_class: req.params.class },
       "-_id"
@@ -30,12 +34,14 @@ const getNeas = async (req, res) => {
     res.status(200).json(data);
     }
   } else if (req.params.order === "h_mag"){
+    console.log("order por h_mag")
     data = await Nea.find(
       { orbit_class: req.params.class },
       "-_id"
     ).sort({ h_mag: 1 });
     res.status(200).json(data);
   } else if (req.params.order === "period__yr"){
+    console.log("order por date")
     data = await Nea.find(
       { orbit_class: req.params.class},
       "-_id"
@@ -57,6 +63,7 @@ const getNeas = async (req, res) => {
   }
   }
     } else if (req.query.from && req.query.to) {
+      console.log("from to backend"+req.query.order)
       if(req.query.order === "orbit_class"){
         
       data = await Nea.find(
@@ -115,6 +122,7 @@ const getNeas = async (req, res) => {
 
 const createNewNea= async (req, res) => {
   try {
+    console.log(req.params)
     const lan = {
       designation: req.params.designation,
       orbit_class: req.params.orbit_class,
@@ -132,6 +140,7 @@ const createNewNea= async (req, res) => {
 };
 
 const editNeas = async (req, res) => {
+  console.log(req.params)
   try {
     let query = { designation: req.params.designation };
     let update = {

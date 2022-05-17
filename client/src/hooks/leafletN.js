@@ -8,8 +8,8 @@ import { Popup } from 'react-leaflet/Popup'
 export default function leafletN(props) {
 const fecha = new Date();
 const coordenadas = (distance, period) => {
-const startD = Math.random() * (30 - 1) + 1;
-const startM = Math.random() * (12 - 1) + 1;
+const startD = Math.random() * (1 - 30) + 1;
+const startM = Math.random() * (1 - 12) + 1;
  const fecha = new Date();
  let month = fecha.getMonth() + 1;
  let day = fecha.getDate();
@@ -126,6 +126,8 @@ const getIconSaturno = () => {
           <p>designation: {item.designation}</p>
               <p>orbit_class: {item.orbit_class}</p>
               <p>discovery: {(item.discovery_date).slice(0,10)}</p>
+              {/* {console.log("mes " + item.discovery_date.slice(5,7))}
+              {console.log("dia " +item.discovery_date.slice(8,10))} */}
               <p>period_yr: {item.period_yr}</p>
               {/* <p>Latitude: {item.q_au_1}</p> */}
               <p>Distance to sun: {item.q_au_2}au</p>
@@ -144,31 +146,25 @@ const getIconSaturno = () => {
           <Marker icon={getIconTierra()} position={[0,10]}>
           <Popup>
           <p>designation: Tierra</p>
-              <p>Latitude: {coordenadas(1,1)[0]*10}</p>
-              <p>Longitude: {coordenadas(1,1)[0]*10}</p>
               <p>Distance to sun: {1}au</p>
           </Popup>
           </Marker>
           <Marker icon={getIconMarte()} position={[coordenadas(1.5,1)[0]*10,coordenadas(1.5,1)[1]*10]}>
           <Popup>
           <p>designation: Marte</p>
-              <p>Latitude: {[coordenadas(1.5,1)[0]]}</p>
-              <p>Longitude: {[coordenadas(1.5,1)[1]]}</p>
-
+          <p>Distance to sun: {1.52}au</p>
           </Popup>
           </Marker>
           <Marker icon={getIconJupiter()} position={[1, 50]}>
           <Popup>
-          <p>designation: Tierra</p>
-              <p>Latitude: {1}ua</p>
-              <p>Longitude: {1}ua</p>
+          <p>designation: Jupiter</p>
+              <p>Distance tu sun: {5.20}ua</p>
           </Popup>
           </Marker>
           <Marker icon={getIconSaturno()} position={[7, 95]}>
           <Popup>
-          <p>designation: Tierra</p>
-              <p>Latitude: {1}</p>
-              <p>Longitude: {1}</p>
+          <p>designation: Saturno</p>
+          <p>Distance tu sun: {9.54}ua</p>
           </Popup>
           </Marker>
     </MapContainer>

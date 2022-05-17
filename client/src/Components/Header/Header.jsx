@@ -33,7 +33,7 @@ export default function Header() {
          )}
       </Link>
       <Link to={'./neas'}>
-      {navActive === "neas" 
+      {navActive === "Neas" 
         ?(<button className="nav__button-active">
             Neas
         </button>
