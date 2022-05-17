@@ -1,6 +1,7 @@
-export default function fetchLandings(landingInputs, orderBy, setList) {
-        if (landingInputs.length >= 4) {
+export default function fetchLandings(landingInputs, orderBy, setList, setLandingInputs) {
+        if (landingInputs.length > 4) {
           setList([""])
+          setLandingInputs([""])
         }
         if(landingInputs[0] === "" || landingInputs[1] === ""){
           if(orderBy===""){

@@ -4,7 +4,7 @@ import { Marker } from 'react-leaflet/Marker'
 import { Popup } from 'react-leaflet/Popup'
 
 
-
+//function to genearate coordenadas
 export default function leafletN(props) {
 const fecha = new Date();
 const coordenadas = (distance, period) => {
@@ -13,54 +13,15 @@ const startM = Math.random() * (12 - 1) + 1;
  const fecha = new Date();
  let month = fecha.getMonth() + 1;
  let day = fecha.getDate();
- console.log(fecha.getDate(), fecha.getMonth() + 1)
  const date = ((month-1) * 30 + day)/365
  const inicio = ((startM-1) * 30 + startD)/365
- console.log("fecha actual "+date+"/año")
- console.log("fecha inicio "+inicio+"/año")
  const vMedia = (360/period)
- console.log("velocidad media "+vMedia+"º/año")
  const desfase = date - inicio
- console.log("desfase "+desfase+"/año")
  const anomaliaM = vMedia * desfase
- console.log("anomaliaM "+anomaliaM+"º")
 const anomaliaRad = anomaliaM * Math.PI / 180
-console.log("anomaliaRad "+anomaliaRad+"rad")
  const x = distance * Math.cos(anomaliaRad)
- console.log(x+"º")
  const y = distance * Math.sin(anomaliaRad)
- console.log(y+"º")
  return [x, y]
-}
-
-coordenadas(1.2, 2)
-
-
-//    const getSunEuler = (date) =>{
-//     const now = date || new Date();
-// console.log(date)
-//     // The boilerplate: fiddling with dates
-//     const soy = (new Date(now.getFullYear(), 0, 0)).getTime();
-//     const eoy = (new Date(now.getFullYear() + 1, 0, 0)).getTime();
-//     const nows = now.getTime();
-//     const poy = (nows - soy) / (eoy - soy);
-
-//     const secs = now.getUTCMilliseconds() / 1e3
-//             + now.getUTCSeconds()
-//             + 60 * (now.getUTCMinutes() + 60 * now.getUTCHours());
-//     const pod = secs / 86400; // leap secs? nah.
-
-//     // The actual magic
-//     const lat = (-pod + 0.5) * Math.PI * 2;
-//     const lon = Math.sin((poy - .22) * Math.PI * 2) * .41;
-
-//     return ([lat, lon]);
-// }
-function getRandomArbitrary() {
-  return Math.random() * (-20 - 60) + 20
-}
-function getRandomArbitrary2() {
-  return Math.random() * (60, 20) + 20
 }
 
 

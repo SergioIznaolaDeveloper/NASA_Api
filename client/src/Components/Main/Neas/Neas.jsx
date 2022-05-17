@@ -9,13 +9,12 @@ import { Post } from '../../../Context/Post';
 
 export default function Neas() {
   const [list, setList] = useState([])
-  const {neasInputs, pagination, orderBy} = useContext(NeasContext);
+  const {neasInputs, pagination, orderBy, setNeasInputs} = useContext(NeasContext);
   const {putEdit } = useContext(Post)
   const {setNavActive} = useContext(NavigatorContext);
-
   useEffect(() => {
-    setNavActive("Neas"); // set navbar active
-    FetchNeas(neasInputs, orderBy, setList) // hook to fetch Neas
+    setNavActive("neas"); // set navbar active
+    FetchNeas(neasInputs, orderBy, setList, setNeasInputs) // hook to fetch Neas
   } , [neasInputs, pagination, orderBy, putEdit])
 
 return (

@@ -5,4 +5,208 @@
     align-items: center;
     margin-top: 50px;
     margin-bottom: 50px;
+    width: 100vw;
+    &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #e8e8e8;
+    border: #e8122b solid 2px;
+    padding: 2px 5px;
+    font-size: 35px;
+    border-radius: 5px;
+    align-self: center;
+    background-image: url('../../assets/fondo_filter_2.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 80%;
+    height: 120px;
+    text-align: center;
+    }
+    &__subtitle{
+        color: #e8122b;
+        padding: 2px 5px;
+        font-size: 20px;
+        border-radius: 5px;
+        align-self: center;
+        margin: 0px 0px 0px 0px;
+    }
+}
+.length{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background-color: #e8122b;
+    border-radius: 50px;
+    padding: 3px;
+    height: 15px;
+    width: 15px;
+    top: 5px;
+    z-index: 100;
+    right: 35px;
+    margin:0px;
+}
+.cart{
+display: flex;
+width: 330px;
+box-shadow: 0px 0px 5px #00000086;
+background-image: url('../../assets/card_background.jpg');
+background-position: center;
+background-size: cover;
+display: flex;
+flex-flow: row;
+justify-content: space-evenly;
+align-items: center;
+border-radius: 5px;
+margin: 5px;
+border: #085199 solid 3px;
+&__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}   
+}
+.cart__section{
+display: flex;
+flex-flow: column;
+justify-content: center;
+align-items: center;
+
+}
+.products{
+display: flex;
+flex-flow: row wrap;
+width: 90%;
+justify-content: center;
+align-items: center;
+}
+.carts__container{
+display: flex;
+flex-flow: row wrap;
+justify-content: center;
+align-items: center;
+min-width: 330px;
+}
+
+.cart__title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 5px;
+}
+.cart__price {
+    color: #e8122b;
+    font-size: 20px;
+    margin: 5px;
+}
+.cart__img {
+width: 120px;
+height: 90px;
+border-radius: 5px;
+box-shadow: 0px 0px 5px black;
+}
+.cart__button{
+font-family: 'Strait', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  border: transparent;
+  min-height: 25px;
+  border: white solid 2px;
+  border-radius: 5px;
+  width: 150px;
+  margin: 5px;
+  background-color: #e8122b;
+  color: white;
+  cursor: pointer;
+}
+.cart__button:hover{
+    background-color: #085199;
+    color: white;
+}
+
+.cart__total{
+    width: 300px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    &__title{
+        font-size: 20px;
+        font-weight: 600;
+        margin: 5px;
+    }
+    &__price{
+        color:#e8122b;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 5px;
+    }
+}
+.product{
+    font-family: "Oswald", sans-serif;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background-image: url('../../assets/card_background.jpg');
+    background-position: top;
+    background-size: cover;
+    border: #085199 solid 3px;
+    border-radius: 5px;
+    width: 300px;
+    &__img{
+        width: 280px;
+        height: 200px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px black;
+        margin-top: 10px;
+        border: #085199 solid 3px;
+    }
+    &__title{
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 5px;
+    }
+    &__price{
+        color:#e8122b;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 5px;
+    }
+    &__category{
+        text-transform: uppercase;
+        color: #085199;
+        font-size: 15px;
+        font-weight: 600;
+        margin: 5px;
+    }
+    &__button{
+        cursor: pointer;
+        font-family: "Oswald", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        border: transparent;
+        min-height: 25px;
+        border: white solid 2px;
+        border-radius: 5px;
+        width: 150px;
+        margin: 5px;
+        background-color: #e8122b;
+        color: white;
+    }
+    &__button:hover{
+        background-color: #085199;
+        color: white;
+    }
 }
