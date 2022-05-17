@@ -3,7 +3,6 @@ import { PicContext } from "./Context/PicContext";
 import { NavigatorContext } from './Context/NavigatorContext';
 import { LandingContext } from './Context/LandingContext';
 import { NeasContext } from './Context/NeasContext';
-
 import { Post } from './Context/Post';
 import Main from "./Components/Main/Main";
 import Header from "./Components/Header/Header";
